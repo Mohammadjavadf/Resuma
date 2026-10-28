@@ -1,0 +1,2610 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>سینا مرادی | طراح و توسعه‌دهنده — Sina Moradi | Designer & Developer</title>
+<meta name="description" content="سینا مرادی، طراح و توسعه‌دهنده مستقل با تمرکز بر طراحی مدرن و تجربه کاربری. Portfolio of a designer and developer.">
+<meta name="keywords" content="طراح, توسعه‌دهنده, رزومه, portfolio, designer, developer">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://example.com/demo-minimal.html">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="سینا مرادی | طراح و توسعه‌دهنده">
+<meta property="og:description" content="پورتفولیو مدرن طراح و توسعه‌دهنده">
+<meta property="og:image" content="https://example.com/og-min.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"Sina Moradi",
+  "alternateName":"سینا مرادی",
+  "jobTitle":"Designer & Developer",
+  "url":"https://example.com/demo-minimal.html",
+  "sameAs":["https://github.com/","https://dribbble.com/"],
+  "knowsAbout":["UI Design","Frontend Development","Minimalism"]
+}
+</script>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Font Awesome 6 Free -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+/* ============= THEME VARIABLES ============= */
+:root[data-theme="dark"]{
+  --bg:#0a0612;
+  --bg-2:#120a1f;
+  --panel:rgba(255,255,255,.03);
+  --panel-solid:#150d24;
+  --panel-2:rgba(255,255,255,.06);
+  --border:rgba(255,255,255,.08);
+  --border-hi:rgba(255,255,255,.15);
+  --text:#f5f0ff;
+  --muted:#9b8fb5;
+  --muted-2:#6b6184;
+  --grad-1:#8b5cf6;
+  --grad-2:#ec4899;
+  --grad-3:#06b6d4;
+  --grad-4:#f59e0b;
+  --accent:#a78bfa;
+  --shadow:0 20px 60px rgba(139,92,246,.15);
+  --glow:0 0 60px rgba(139,92,246,.35);
+}
+:root[data-theme="light"]{
+  --bg:#faf8ff;
+  --bg-2:#f3ebff;
+  --panel:rgba(255,255,255,.7);
+  --panel-solid:#ffffff;
+  --panel-2:rgba(139,92,246,.04);
+  --border:rgba(139,92,246,.12);
+  --border-hi:rgba(139,92,246,.25);
+  --text:#1a0d2e;
+  --muted:#6b5b8a;
+  --muted-2:#9585b0;
+  --grad-1:#8b5cf6;
+  --grad-2:#ec4899;
+  --grad-3:#06b6d4;
+  --grad-4:#f59e0b;
+  --accent:#7c3aed;
+  --shadow:0 20px 60px rgba(139,92,246,.12);
+  --glow:0 0 60px rgba(139,92,246,.2);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Vazirmatn','Inter',sans-serif;
+  background:var(--bg); color:var(--text);
+  line-height:1.7; min-height:100vh;
+  transition:background .5s, color .5s;
+  overflow-x:hidden;
+  font-weight:400;
+  position:relative;
+}
+html[dir="ltr"] body{font-family:'Inter','Vazirmatn',sans-serif}
+
+/* ============= BACKGROUND DECOR ============= */
+.bg-decor{
+  position:fixed; inset:0; z-index:-1; overflow:hidden;
+  pointer-events:none;
+}
+.bg-decor .orb{
+  position:absolute; border-radius:50%;
+  filter:blur(120px); opacity:.35;
+  animation:float 20s infinite ease-in-out;
+}
+.bg-decor .orb.o1{
+  width:600px; height:600px; top:-200px; right:-100px;
+  background:radial-gradient(circle, var(--grad-1), transparent 70%);
+}
+.bg-decor .orb.o2{
+  width:500px; height:500px; bottom:-100px; left:-150px;
+  background:radial-gradient(circle, var(--grad-2), transparent 70%);
+  animation-delay:-7s;
+}
+.bg-decor .orb.o3{
+  width:400px; height:400px; top:40%; left:40%;
+  background:radial-gradient(circle, var(--grad-3), transparent 70%);
+  animation-delay:-14s;
+  opacity:.15;
+}
+:root[data-theme="light"] .bg-decor .orb{opacity:.25}
+@keyframes float{
+  0%,100%{transform:translate(0,0) scale(1)}
+  33%{transform:translate(80px,-60px) scale(1.1)}
+  66%{transform:translate(-60px,40px) scale(.95)}
+}
+
+/* ============= SCROLL PROGRESS ============= */
+#scrollProgress{
+  position:fixed; top:0; left:0; height:3px; width:0%;
+  background:linear-gradient(90deg,var(--grad-1),var(--grad-2),var(--grad-3));
+  z-index:1001; transition:width .1s;
+  box-shadow:0 0 20px var(--grad-1);
+}
+
+/* ============= NAVBAR ============= */
+nav.navbar{
+  position:fixed; top:0; left:0; right:0; z-index:1000;
+  padding:16px 32px;
+  background:color-mix(in srgb, var(--bg) 70%, transparent);
+  backdrop-filter:blur(24px) saturate(180%);
+  -webkit-backdrop-filter:blur(24px) saturate(180%);
+  border-bottom:1px solid transparent;
+  transition:all .4s;
+}
+nav.navbar.scrolled{
+  border-bottom-color:var(--border);
+  padding:12px 32px;
+  box-shadow:0 8px 32px rgba(0,0,0,.08);
+}
+.nav-inner{
+  max-width:1200px; margin:0 auto;
+  display:flex; justify-content:space-between; align-items:center; gap:20px;
+}
+.nav-brand{
+  font-weight:800; font-size:1.05rem; cursor:pointer;
+  white-space:nowrap; letter-spacing:-.02em;
+  display:flex; align-items:center; gap:10px;
+}
+.nav-brand .brand-logo{
+  width:36px; height:36px; border-radius:10px;
+  background:linear-gradient(135deg,var(--grad-1),var(--grad-2));
+  display:flex; align-items:center; justify-content:center;
+  color:#fff; font-size:.95rem;
+  box-shadow:0 6px 20px rgba(139,92,246,.4);
+}
+.nav-brand .brand-name{
+  background:linear-gradient(135deg,var(--text),var(--accent));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.nav-links{display:flex; gap:4px; list-style:none; align-items:center}
+.nav-links a{
+  color:var(--muted); text-decoration:none; font-size:.88rem;
+  padding:8px 16px; border-radius:10px;
+  transition:all .25s; white-space:nowrap; font-weight:500;
+  position:relative;
+  display:flex; align-items:center; gap:6px;
+}
+.nav-links a i{font-size:.8rem; opacity:.7; transition:opacity .25s}
+.nav-links a:hover{color:var(--text); background:var(--panel-2)}
+.nav-links a:hover i{opacity:1}
+.nav-links a.active{
+  color:var(--text);
+  background:var(--panel-2);
+}
+.nav-links a.active i{opacity:1; color:var(--accent)}
+.nav-links a.active::before{
+  content:''; position:absolute; bottom:2px; left:50%; transform:translateX(-50%);
+  width:4px; height:4px; border-radius:50%;
+  background:linear-gradient(135deg,var(--grad-1),var(--grad-2));
+  box-shadow:0 0 8px var(--grad-1);
+}
+.nav-actions{display:flex; gap:8px; align-items:center}
+.ctrl-btn{
+  width:40px; height:40px; border-radius:12px;
+  background:var(--panel); border:1px solid var(--border);
+  color:var(--text); cursor:pointer; font-size:1rem;
+  display:flex; align-items:center; justify-content:center;
+  transition:all .3s;
+  backdrop-filter:blur(10px);
+}
+.ctrl-btn:hover{
+  background:linear-gradient(135deg,var(--grad-1),var(--grad-2));
+  color:#fff; border-color:transparent;
+  transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(139,92,246,.4);
+}
+.ctrl-btn.lang{width:auto; padding:0 14px; font-size:.78rem; font-weight:700}
+.hamburger{
+  display:none; width:40px; height:40px; border-radius:12px;
+  background:var(--panel); border:1px solid var(--border);
+  cursor:pointer; align-items:center; justify-content:center;
+  color:var(--text); font-size:1rem; padding:0;
+  backdrop-filter:blur(10px);
+}
+.mobile-menu{
+  position:fixed; top:70px; left:16px; right:16px; z-index:999;
+  background:color-mix(in srgb, var(--bg) 90%, transparent);
+  backdrop-filter:blur(24px);
+  border:1px solid var(--border);
+  border-radius:20px;
+  transform:translateY(-140%); transition:transform .4s cubic-bezier(.4,0,.2,1);
+  padding:12px;
+  box-shadow:0 20px 60px rgba(0,0,0,.3);
+}
+.mobile-menu.open{transform:translateY(0)}
+.mobile-menu a{
+  display:flex; align-items:center; gap:12px;
+  padding:14px 18px; color:var(--text);
+  text-decoration:none; border-radius:12px;
+  transition:all .2s; font-size:.95rem; font-weight:500;
+}
+.mobile-menu a i{
+  width:20px; text-align:center; color:var(--muted);
+  transition:color .2s; font-size:.9rem;
+}
+.mobile-menu a:hover,.mobile-menu a.active{
+  background:linear-gradient(135deg,var(--grad-1),var(--grad-2));
+  color:#fff;
+}
+.mobile-menu a:hover i,.mobile-menu a.active i{color:#fff}
+@media(max-width:950px){.nav-links{display:none} .hamburger{display:flex}}
+@media(min-width:951px){.mobile-menu{display:none}}
+
+/* ============= HERO ============= */
+header.hero{
+  min-height:100vh; padding:140px 32px 80px;
+  max-width:1200px; margin:0 auto;
+  display:flex; flex-direction:column; justify-content:center;
+  position:relative;
+}
+.hero .eyebrow{
+  display:inline-flex; align-items:center; gap:12px;
+  color:var(--muted); font-size:.82rem; font-weight:500;
+  letter-spacing:.08em; text-transform:uppercase;
+  margin-bottom:28px;
+  padding:8px 16px; border-radius:30px;
+  background:var(--panel); border:1px solid var(--border);
+  backdrop-filter:blur(10px);
+  width:fit-content;
+  animation:fadeInUp .8s ease;
+}
+.hero .eyebrow .pulse{
+  width:8px; height:8px; border-radius:50%;
+  background:linear-gradient(135deg,var(--grad-1),var(--grad-2));
+  box-shadow:0 0 12px var(--grad-1);
+  animation:pulse 2s infinite;
+}
+.hero .eyebrow i{color:var(--accent); font-size:.85rem}
+@keyframes pulse{
+  0%,100%{transform:scale(1); opacity:1}
+  50%{transform:scale(1.3); opacity:.7}
+}
+@keyframes fadeInUp{
+  from{opacity:0; transform:translateY(30px)}
+  to{opacity:1; transform:translateY(0)}
+}
+.hero h1{
+  font-size:clamp(2.8rem, 8vw, 5.5rem); font-weight:900;
+  margin-bottom:24px; line-height:1.02;
+  letter-spacing:-.05em;
+  animation:fadeInUp .8s ease .1s backwards;
+}
+.hero h1 .grad{
+  background:linear-gradient(135deg,var(--grad-1) 0%, var(--grad-2) 50%, var(--grad-3) 100%);
+  background-size:200% 200%;
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  animation:gradShift 6s ease infinite;
+}
+@keyframes gradShift{
+  0%,100%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+}
+.hero .bio{
+  color:var(--muted); font-size:1.15rem; max-width:640px;
+  margin-bottom:44px; line-height:1.8;
+  animation:fadeInUp .8s ease .2s backwards;
+}
+.hero .cta{
+  display:flex; gap:14px; flex-wrap:wrap; margin-bottom:64px;
+  animation:fadeInUp .8s ease .3s backwards;
+}
+.btn{
+  padding:16px 32px; border-radius:14px; border:1px solid var(--border);
+  font-family:inherit; font-size:.92rem; font-weight:700;
+  cursor:pointer; text-decoration:none; display:inline-flex;
+  align-items:center; gap:10px; transition:all .3s;
+  background:var(--panel); color:var(--text);
+  backdrop-filter:blur(10px);
+  position:relative; overflow:hidden;
+}
+.btn i{font-size:.9em}
+.btn-primary{
+  background:linear-gradient(135deg,var(--grad-1),var(--grad-2));
+  color:#fff; border-color:transparent;
+  box-shadow:0 10px 30px rgba(139,92,246,.35);
+}
+.btn-primary:hover{
+  transform:translateY(-3px);
+  box-shadow:0 15px 40px rgba(236,72,153,.45);
+}
+.btn-ghost:hover{
+  background:var(--panel-2); border-color:var(--border-hi);
+  transform:translateY(-3px);
+}
+
+.hero .meta{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:20px; max-width:800px;
+  animation:fadeInUp .8s ease .4s backwards;
+}
+.meta-card{
+  padding:24px 20px; border-radius:18px;
+  background:var(--panel); border:1px solid var(--border);
+  backdrop-filter:blur(20px);
+  transition:all .4s;
+  position:relative; overflow:hidden;
+}
+.meta-card::before{
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg,var(--grad-1),var(--grad-2));
+  transform:scaleX(0); transform-origin:right;
+  transition:transform .4s;
+}
+.meta-card:hover::before{transform:scaleX(1)}
+.meta-card:hover{
+  transform:translateY(-6px);
+  border-color:var(--border-hi);
+  box-shadow:var(--shadow);
+}
+.meta-card .mc-icon{
+  width:36px; height:36px; border-radius:10px;
+  background:linear-gradient(135deg,var(--grad-1),var(--grad-2));
+  color:#fff; display:flex; align-items:center; justify-content:center;
+  font-size:.95rem; margin-bottom:14px;
+  box-shadow:0 6px 16px rgba(139,92,246,.35);
+}
+.meta-card .v{
+  font-size:2rem; font-weight:900; letter-spacing:-.03em;
+  background:linear-gradient(135deg,var(--text),var(--accent));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  line-height:1; margin-bottom:6px;
+}
+.meta-card .l{color:var(--muted); font-size:.82rem; font-weight:500}
+
+/* ============= SECTIONS ============= */
+section{max-width:1200px; margin:0 auto; padding:110px 32px; scroll-margin-top:80px}
+.section-head{margin-bottom:64px; max-width:640px}
+.section-head .kicker{
+  display:inline-flex; align-items:center; gap:10px;
+  color:var(--muted); font-size:.78rem;
+  font-weight:600; letter-spacing:.15em; text-transform:uppercase;
+  margin-bottom:16px;
+  padding:6px 14px; border-radius:30px;
+  background:var(--panel); border:1px solid var(--border);
+}
+.section-head .kicker::before{
+  content:''; width:6px; height:6px; border-radius:50%;
+  background:linear-gradient(135deg,var(--grad-1),var(--grad-2));
+  box-shadow:0 0 8px var(--grad-1);
+}
+.section-head .kicker i{color:var(--accent); font-size:.85rem}
+.section-head h2{
+  font-size:clamp(2rem, 5vw, 3rem); font-weight:900;
+  letter-spacing:-.04em; line-height:1.1;
+  margin-bottom:16px;
+}
+.section-head h2 .grad{
+  background:linear-gradient(135deg,var(--grad-1),var(--grad-2));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.section-head .sub{color:var(--muted); font-size:1.02rem; max-width:560px}
+
+/* ============= WORK ============= */
+.filters{
+  display:flex; gap:6px; margin-bottom:40px; flex-wrap:wrap;
+  padding:6px; border-radius:14px;
+  background:var(--panel); border:1px solid var(--border);
+  backdrop-filter:blur(10px);
+  width:fit-content;
+}
+.filter-btn{
+  padding:10px 22px; border-radius:10px;
+  background:transparent; border:none;
+  color:var(--muted); cursor:pointer; font-family:inherit;
+  font-size:.85rem; transition:all .3s; font-weight:600;
+  display:inline-flex; align-items:center; gap:6px;
+}
+.filter-btn i{font-size:.8rem}
+.filter-btn:hover{color:var(--text)}
+.filter-btn.active{
+  background:linear-gradient(135deg,var(--grad-1),var(--grad-2));
+  color:#fff;
+  box-shadow:0 6px 20px rgba(139,92,246,.35);
+}
+.work-list{display:flex; flex-direction:column; gap:12px}
+.work-item{
+  display:grid; grid-template-columns:60px 1fr auto 110px;
+  gap:24px; padding:24px 28px;
+  border-radius:20px;
+  background:var(--panel); border:1px solid var(--border);
+  backdrop-filter:blur(10px);
+  cursor:pointer; transition:all .4s;
+  align-items:center;
+  position:relative; overflow:hidden;
+}
+.work-item::before{
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(135deg,
+    color-mix(in srgb, var(--grad-1) 8%, transparent),
+    color-mix(in srgb, var(--grad-2) 8%, transparent));
+  opacity:0; transition:opacity .4s;
+}
+.work-item::after{
+  content:''; position:absolute; top:0; right:0; bottom:0;
+  width:3px;
+  background:linear-gradient(180deg,var(--grad-1),var(--grad-2));
+  transform:scaleY(0); transform-origin:top;
+  transition:transform .4s;
+}
+html[dir="ltr"] .work-item::after{right:auto; left:0}
+.work-item:hover::before{opacity:1}
+.work-item:hover::after{transform:scaleY(1)}
+.work-item:hover{
+  transform:translateX(-6px);
+  border-color:var(--border-hi);
+  box-shadow:var(--shadow);
+}
+html[dir="ltr"] .work-item:hover{transform:translateX(6px)}
+.work-item.hide{display:none}
+.work-item > *{position:relative; z-index:1}
+.work-item .num{
+  font-size:.75rem; font-weight:800;
+  letter-spacing:.1em; color:var(--muted-2);
+  font-variant-numeric:tabular-nums;
+}
+.work-item .title{
+  font-size:1.15rem; font-weight:700;
+  letter-spacing:-.02em; transition:all .3s;
+}
+.work-item .title::after{
+  content:'\f061'; font-family:'Font Awesome 6 Free'; font-weight:900;
+  display:inline-block; margin-right:10px;
+  color:var(--muted); opacity:0;
+  transition:all .3s; transform:translate(-6px, 0);
+  font-size:.75em;
+}
+html[dir="ltr"] .work-item .title::after{
+  margin-right:0; margin-left:10px;
+  content:'\f061';
+}
+.work-item:hover .title::after{opacity:1; transform:translate(0,0)}
+.work-item .cat{
+  display:inline-flex; align-items:center; gap:6px;
+  padding:4px 12px; border-radius:20px;
+  background:var(--panel-2); border:1px solid var(--border);
+  color:var(--muted); font-size:.75rem; font-weight:600;
+  width:fit-content;
+}
+.work-item .cat i{font-size:.75rem; color:var(--accent)}
+.work-item .year{
+  color:var(--muted-2); font-size:.82rem;
+  font-variant-numeric:tabular-nums; text-align:left;
+  display:flex; align-items:center; gap:6px;
+}
+.work-item .year i{font-size:.75rem}
+@media(max-width:720px){
+  .work-item{
+    grid-template-columns:1fr auto; gap:8px 16px;
+    padding:20px;
+  }
+  .work-item .num{display:none}
+  .work-item .title{font-size:1.02rem; grid-column:1/-1}
+  .work-item .cat{grid-column:1}
+  .work-item .year{grid-column:2}
+}
+
+/* ============= PROJECT MODAL ============= */
+.modal{
+  display:none; position:fixed; inset:0; z-index:2000;
+  background:color-mix(in srgb, var(--bg) 70%, transparent);
+  backdrop-filter:blur(24px) saturate(180%);
+  align-items:center; justify-content:center; padding:24px;
+  opacity:0; transition:opacity .4s;
+}
+.modal.open{display:flex; opacity:1}
+.modal .modal-box{
+  background:var(--panel-solid); border:1px solid var(--border-hi);
+  border-radius:24px; width:100%; max-width:780px;
+  max-height:90vh; overflow-y:auto;
+  transform:scale(.94) translateY(20px); transition:transform .4s cubic-bezier(.4,0,.2,1);
+  position:relative;
+  box-shadow:0 40px 100px rgba(0,0,0,.5), var(--glow);
+}
+.modal.open .modal-box{transform:scale(1) translateY(0)}
+.modal .close-x{
+  position:absolute; top:20px; left:20px; z-index:10;
+  width:42px; height:42px; border-radius:50%;
+  background:var(--panel); border:1px solid var(--border);
+  color:var(--text); cursor:pointer; font-size:1rem;
+  display:flex; align-items:center; justify-content:center;
+  transition:all .3s;
+  backdrop-filter:blur(10px);
+}
+html[dir="rtl"] .modal .close-x{left:auto; right:20px}
+.modal .close-x:hover{
+  background:linear-gradient(135deg,var(--grad-1),var(--grad-2));
+  color:#fff; border-color:transparent;
+  transform:rotate(90deg);
+}
+.modal .modal-hero{
+  padding:64px 40px 40px;
+  border-bottom:1px solid var(--border);
+  background:linear-gradient(135deg,
+    color-mix(in srgb, var(--grad-1) 10%, transparent),
+    color-mix(in srgb, var(--grad-2) 8%, transparent));
+  position:relative; overflow:hidden;
+}
+.modal .modal-hero::before{
+  content:''; position:absolute; top:-50%; right:-20%;
+  width:400px; height:400px; border-radius:50%;
+  background:radial-gradient(circle, var(--grad-1), transparent 70%);
+  opacity:.15; filter:blur(60px);
+}
+.modal .modal-hero .cat{
+  display:inline-flex; align-items:center; gap:6px;
+  padding:5px 14px; border-radius:20px;
+  background:var(--panel); border:1px solid var(--border);
+  color:var(--muted); font-size:.75rem;
+  letter-spacing:.1em; text-transform:uppercase;
+  font-weight:600; margin-bottom:20px;
+  position:relative; z-index:1;
+}
+.modal .modal-hero .cat i{color:var(--accent)}
+.modal .modal-hero h2{
+  font-size:clamp(1.7rem, 4vw, 2.4rem); font-weight:900;
+  letter-spacing:-.03em; margin-bottom:20px;
+  position:relative; z-index:1;
+}
+.modal .modal-hero .meta{
+  display:flex; gap:16px; flex-wrap:wrap;
+  color:var(--muted); font-size:.85rem;
+  position:relative; z-index:1;
+}
+.modal .modal-hero .meta span{
+  display:inline-flex; align-items:center; gap:6px;
+  padding:5px 12px; border-radius:20px;
+  background:var(--panel); border:1px solid var(--border);
+}
+.modal .modal-hero .meta i{color:var(--accent)}
+.modal .modal-body{padding:40px}
+.modal .modal-body p{
+  color:var(--muted); margin-bottom:28px; line-height:1.9;
+  font-size:1rem;
+}
+.modal .tags{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:32px}
+.modal .tags span{
+  display:inline-flex; align-items:center; gap:6px;
+  background:linear-gradient(135deg,
+    color-mix(in srgb, var(--grad-1) 15%, transparent),
+    color-mix(in srgb, var(--grad-2) 15%, transparent));
+  color:var(--text); padding:7px 16px; border-radius:20px;
+  font-size:.78rem; font-weight:600;
+  border:1px solid var(--border);
+}
+.modal .tags span::before{
+  content:'\f02b'; font-family:'Font Awesome 6 Free'; font-weight:900;
+  color:var(--accent); font-size:.7rem;
+}
+.modal .modal-actions{display:flex; gap:12px; flex-wrap:wrap}
+.modal .modal-actions .btn{flex:1; min-width:150px; justify-content:center}
+
+/* ============= ABOUT ============= */
+.about-grid{
+  display:grid; grid-template-columns:1.3fr 1fr; gap:60px;
+  align-items:start;
+}
+@media(max-width:800px){.about-grid{grid-template-columns:1fr; gap:40px}}
+.about-text p{
+  color:var(--muted); margin-bottom:20px; line-height:1.9;
+  font-size:1rem;
+}
+.about-text p:first-child{
+  color:var(--text); font-size:1.3rem; font-weight:700;
+  letter-spacing:-.02em; line-height:1.5;
+}
+.about-text p:first-child::before{
+  content:''; display:block; width:40px; height:4px;
+  background:linear-gradient(90deg,var(--grad-1),var(--grad-2));
+  border-radius:2px; margin-bottom:20px;
+}
+.about-list{display:flex; flex-direction:column; gap:10px}
+.about-list .item{
+  padding:18px 22px; border-radius:16px;
+  background:var(--panel); border:1px solid var(--border);
+  backdrop-filter:blur(10px);
+  display:flex; justify-content:space-between; gap:16px;
+  transition:all .3s; align-items:center;
+}
+.about-list .item:hover{
+  border-color:var(--border-hi);
+  transform:translateX(-4px);
+}
+html[dir="ltr"] .about-list .item:hover{transform:translateX(4px)}
+.about-list .item .k{
+  color:var(--muted); font-size:.82rem; font-weight:500;
+  display:flex; align-items:center; gap:8px;
+}
+.about-list .item .k i{
+  width:16px; text-align:center; color:var(--accent); font-size:.85rem;
+}
+.about-list .item .v{font-weight:700; font-size:.9rem}
+
+/* ============= TIMELINE ============= */
+.timeline{display:flex; flex-direction:column; gap:16px}
+.tl-item{
+  padding:28px 32px; border-radius:20px;
+  background:var(--panel); border:1px solid var(--border);
+  backdrop-filter:blur(10px);
+  transition:all .4s;
+  position:relative; overflow:hidden;
+}
+.tl-item::before{
+  content:''; position:absolute; top:0; right:0; bottom:0;
+  width:4px;
+  background:linear-gradient(180deg,var(--grad-1),var(--grad-2),var(--grad-3));
+  opacity:0; transition:opacity .3s;
+}
+html[dir="ltr"] .tl-item::before{right:auto; left:0}
+.tl-item:hover::before{opacity:1}
+.tl-item:hover{
+  border-color:var(--border-hi);
+  transform:translateY(-4px);
+  box-shadow:var(--shadow);
+}
+.tl-item .date{
+  display:inline-flex; align-items:center; gap:6px;
+  padding:4px 14px; border-radius:20px;
+  background:linear-gradient(135deg,
+    color-mix(in srgb, var(--grad-1) 15%, transparent),
+    color-mix(in srgb, var(--grad-2) 15%, transparent));
+  color:var(--text); font-size:.75rem;
+  font-weight:700; margin-bottom:14px;
+  border:1px solid var(--border);
+}
+.tl-item .date i{color:var(--accent); font-size:.75rem}
+.tl-item h3{
+  font-size:1.15rem; font-weight:800; margin-bottom:6px;
+  letter-spacing:-.02em;
+}
+.tl-item .company{
+  color:var(--accent); font-size:.88rem;
+  margin-bottom:12px; font-weight:600;
+  display:flex; align-items:center; gap:6px;
+}
+.tl-item .company i{font-size:.85rem}
+.tl-item p{color:var(--muted); font-size:.9rem; line-height:1.8}
+
+/* ============= TESTIMONIALS ============= */
+.slider-wrap{position:relative; overflow:hidden; border-radius:24px}
+.slider{display:flex; transition:transform .6s cubic-bezier(.4,0,.2,1)}
+.slide{
+  min-width:100%; padding:52px 48px;
+  background:var(--panel); border:1px solid var(--border);
+  backdrop-filter:blur(20px);
+  border-radius:24px;
+  position:relative; overflow:hidden;
+}
+.slide::before{
+  content:'\f10d'; font-family:'Font Awesome 6 Free'; font-weight:900;
+  position:absolute; top:20px; right:40px;
+  font-size:5rem; line-height:1;
+  background:linear-gradient(135deg,var(--grad-1),var(--grad-2));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  opacity:.15;
+  z-index:0;
+}
+html[dir="ltr"] .slide::before{right:auto; left:40px}
+.slide .quote{
+  font-size:clamp(1.15rem, 2.5vw, 1.5rem); font-weight:600;
+  line-height:1.7; letter-spacing:-.02em; margin-bottom:32px;
+  color:var(--text); position:relative; z-index:1;
+}
+.slide .author-wrap{
+  display:flex; align-items:center; gap:16px;
+  padding-top:24px; border-top:1px solid var(--border);
+  position:relative; z-index:1;
+}
+.slide .author-avatar{
+  width:56px; height:56px; border-radius:50%;
+  background:linear-gradient(135deg,var(--grad-1),var(--grad-2));
+  display:flex; align-items:center; justify-content:center;
+  color:#fff; font-weight:900; font-size:1.1rem;
+  flex-shrink:0;
+  box-shadow:0 8px 24px rgba(139,92,246,.35);
+}
+.slide .author-info .name{font-weight:800; font-size:1rem}
+.slide .author-info .role{
+  color:var(--muted); font-size:.82rem;
+  display:flex; align-items:center; gap:6px;
+}
+.slide .author-info .role i{font-size:.75rem}
+.slider-nav{
+  display:flex; gap:8px; margin-top:32px; justify-content:center;
+}
+.slider-nav button{
+  width:10px; height:10px; border-radius:50%;
+  background:var(--border-hi); border:none; cursor:pointer;
+  transition:all .3s;
+}
+.slider-nav button:hover{background:var(--muted)}
+.slider-nav button.active{
+  background:linear-gradient(135deg,var(--grad-1),var(--grad-2));
+  width:32px; border-radius:6px;
+  box-shadow:0 0 12px var(--grad-1);
+}
+
+/* ============= CERTIFICATES ============= */
+.certs{
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:16px;
+}
+.cert{
+  padding:26px; border-radius:20px;
+  background:var(--panel); border:1px solid var(--border);
+  backdrop-filter:blur(10px);
+  transition:all .4s;
+  position:relative; overflow:hidden;
+}
+.cert::before{
+  content:''; position:absolute; top:0; left:0; right:0; height:3px;
+  background:linear-gradient(90deg,var(--grad-1),var(--grad-2),var(--grad-3));
+  transform:scaleX(0); transform-origin:right;
+  transition:transform .4s;
+}
+.cert:hover::before{transform:scaleX(1)}
+.cert:hover{
+  transform:translateY(-6px);
+  border-color:var(--border-hi);
+  box-shadow:var(--shadow);
+}
+.cert .cert-icon{
+  width:44px; height:44px; border-radius:12px;
+  background:linear-gradient(135deg,var(--grad-1),var(--grad-2));
+  color:#fff; display:flex; align-items:center; justify-content:center;
+  font-size:1rem; margin-bottom:16px;
+  box-shadow:0 6px 20px rgba(139,92,246,.35);
+}
+.cert .year-badge{
+  display:inline-flex; align-items:center; gap:6px;
+  padding:4px 12px; border-radius:20px;
+  background:linear-gradient(135deg,
+    color-mix(in srgb, var(--grad-1) 15%, transparent),
+    color-mix(in srgb, var(--grad-2) 15%, transparent));
+  color:var(--text); font-size:.72rem; font-weight:700;
+  margin-bottom:14px;
+  border:1px solid var(--border);
+}
+.cert .year-badge i{color:var(--accent); font-size:.7rem}
+.cert h4{
+  font-size:1rem; font-weight:700; margin-bottom:6px;
+  letter-spacing:-.01em;
+}
+.cert p{color:var(--muted); font-size:.82rem}
+
+/* ============= CONTACT ============= */
+.contact-grid{
+  display:grid; grid-template-columns:1fr 1.1fr; gap:60px;
+  align-items:start;
+}
+@media(max-width:800px){.contact-grid{grid-template-columns:1fr; gap:40px}}
+.contact-intro h3{
+  font-size:clamp(1.8rem, 4vw, 2.5rem); font-weight:900;
+  letter-spacing:-.04em; margin-bottom:20px; line-height:1.15;
+}
+.contact-intro h3 .grad{
+  background:linear-gradient(135deg,var(--grad-1),var(--grad-2));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.contact-intro > p{color:var(--muted); margin-bottom:32px; line-height:1.9}
+.contact-item{
+  display:flex; justify-content:space-between; align-items:center;
+  padding:18px 22px; border-radius:16px;
+  background:var(--panel); border:1px solid var(--border);
+  backdrop-filter:blur(10px);
+  cursor:pointer; transition:all .3s; gap:16px;
+  margin-bottom:12px;
+}
+.contact-item:hover{
+  border-color:var(--border-hi);
+  transform:translateX(-4px);
+  box-shadow:var(--shadow);
+}
+html[dir="ltr"] .contact-item:hover{transform:translateX(4px)}
+.contact-item .left{display:flex; align-items:center; gap:14px}
+.contact-item .ic{
+  width:42px; height:42px; border-radius:12px;
+  background:color-mix(in srgb, var(--accent) 12%, transparent);
+  color:var(--accent); display:flex; align-items:center;
+  justify-content:center; font-size:1rem; flex-shrink:0;
+}
+.contact-item .k{
+  color:var(--muted); font-size:.72rem; font-weight:600;
+  letter-spacing:.05em; text-transform:uppercase;
+  margin-bottom:2px;
+}
+.contact-item .v{font-weight:700; font-size:.92rem; word-break:break-all}
+.contact-item .copy-hint{
+  color:var(--muted); font-size:.72rem; flex-shrink:0;
+  transition:all .3s; opacity:0;
+  padding:6px 12px; border-radius:20px;
+  background:var(--panel-2);
+  display:flex; align-items:center; gap:6px;
+}
+.contact-item:hover .copy-hint{opacity:1; color:var(--accent)}
+
+form{
+  display:flex; flex-direction:column; gap:16px;
+  padding:36px; border-radius:24px;
+  background:var(--panel); border:1px solid var(--border);
+  backdrop-filter:blur(20px);
+}
+form h3{
+  font-size:1.3rem; font-weight:800;
+  margin-bottom:6px; letter-spacing:-.02em;
+  display:flex; align-items:center; gap:10px;
+}
+form h3 i{
+  width:36px; height:36px; border-radius:10px;
+  background:linear-gradient(135deg,var(--grad-1),var(--grad-2));
+  color:#fff; display:flex; align-items:center; justify-content:center;
+  font-size:.95rem;
+}
+form .sub{color:var(--muted); font-size:.85rem; margin-bottom:12px}
+form .field{position:relative}
+form label{
+  display:flex; align-items:center; gap:6px;
+  color:var(--muted); font-size:.75rem;
+  letter-spacing:.08em; text-transform:uppercase;
+  margin-bottom:8px; font-weight:600;
+}
+form label i{color:var(--accent); font-size:.75rem}
+form input, form textarea{
+  width:100%; padding:14px 18px; border-radius:12px;
+  background:var(--bg); border:1px solid var(--border);
+  color:var(--text); font-family:inherit; font-size:.95rem;
+  transition:all .3s; resize:vertical;
+}
+form input:focus, form textarea:focus{
+  outline:none;
+  border-color:transparent;
+  background:
+    linear-gradient(var(--bg),var(--bg)) padding-box,
+    linear-gradient(135deg,var(--grad-1),var(--grad-2)) border-box;
+  box-shadow:0 0 0 4px color-mix(in srgb, var(--grad-1) 12%, transparent);
+}
+form textarea{min-height:110px}
+form .field.error input, form .field.error textarea{
+  background:
+    linear-gradient(var(--bg),var(--bg)) padding-box,
+    linear-gradient(135deg,#ef4444,#f97316) border-box;
+}
+form .err-msg{
+  color:#ef4444; font-size:.75rem; margin-top:6px; display:none;
+}
+form .err-msg.show{display:block}
+form button{margin-top:8px; justify-content:center}
+
+/* ============= PDF MODAL ============= */
+.pdf-modal{
+  display:none; position:fixed; inset:0; z-index:2000;
+  background:color-mix(in srgb, var(--bg) 70%, transparent);
+  backdrop-filter:blur(24px);
+  align-items:center; justify-content:center; padding:24px;
+}
+.pdf-modal.open{display:flex}
+.pdf-modal .inner{
+  background:var(--panel-solid); border:1px solid var(--border-hi);
+  border-radius:20px; width:100%; max-width:900px; height:90vh;
+  display:flex; flex-direction:column; overflow:hidden;
+  box-shadow:0 40px 100px rgba(0,0,0,.5);
+}
+.pdf-modal .head{
+  padding:18px 24px; border-bottom:1px solid var(--border);
+  display:flex; justify-content:space-between; align-items:center;
+}
+.pdf-modal .head strong{
+  font-size:.95rem; font-weight:700;
+  display:flex; align-items:center; gap:8px;
+}
+.pdf-modal .head strong i{color:var(--accent)}
+.pdf-modal .head button{
+  background:transparent; border:none; color:var(--muted);
+  font-size:1rem; cursor:pointer; line-height:1;
+  transition:all .25s;
+  width:36px; height:36px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+}
+.pdf-modal .head button:hover{
+  background:var(--panel); color:var(--text);
+}
+.pdf-modal iframe{flex:1; width:100%; border:none; background:#fff}
+
+/* ============= BACK TO TOP ============= */
+#backTop{
+  position:fixed; bottom:24px; right:24px; z-index:900;
+  width:52px; height:52px; border-radius:16px;
+  background:linear-gradient(135deg,var(--grad-1),var(--grad-2));
+  color:#fff; border:none;
+  cursor:pointer; font-size:1.1rem;
+  box-shadow:0 12px 30px rgba(139,92,246,.45);
+  opacity:0; pointer-events:none; transition:all .4s;
+  display:flex; align-items:center; justify-content:center;
+}
+html[dir="rtl"] #backTop{right:auto; left:24px}
+#backTop.show{opacity:1; pointer-events:auto}
+#backTop:hover{transform:translateY(-4px) scale(1.05)}
+
+/* ============= FOOTER ============= */
+footer{
+  padding:60px 32px 40px; max-width:1200px; margin:0 auto;
+  border-top:1px solid var(--border);
+  display:flex; justify-content:space-between; align-items:center;
+  gap:20px; flex-wrap:wrap; font-size:.85rem; color:var(--muted);
+}
+footer .credit{
+  display:flex; align-items:center; gap:8px;
+}
+footer .credit i{color:var(--grad-2)}
+footer .share{display:flex; gap:10px; flex-wrap:wrap}
+footer .share a{
+  color:var(--text); text-decoration:none; font-weight:600;
+  padding:8px 16px; border-radius:10px;
+  background:var(--panel); border:1px solid var(--border);
+  transition:all .3s; font-size:.82rem;
+  display:flex; align-items:center; gap:6px;
+}
+footer .share a i{font-size:.85rem}
+footer .share a:hover{
+  background:linear-gradient(135deg,var(--grad-1),var(--grad-2));
+  color:#fff; border-color:transparent;
+  transform:translateY(-2px);
+}
+
+/* ============= REVEAL ANIMATION ============= */
+.reveal{opacity:0; transform:translateY(30px); transition:all .8s cubic-bezier(.4,0,.2,1)}
+.reveal.visible{opacity:1; transform:translateY(0)}
+
+/* ============= PRINT ============= */
+@media print{
+  .bg-decor, nav.navbar, .mobile-menu, #backTop, footer .share, form,
+  #scrollProgress, .hamburger, .modal, .pdf-modal{display:none !important}
+  body{background:#fff; color:#000}
+  section{padding:20px 0; page-break-inside:avoid; max-width:100%}
+  .reveal{opacity:1 !important; transform:none !important}
+  a{color:#000; text-decoration:underline}
+  header.hero{min-height:auto; padding:20px 0}
+}
+
+@media(max-width:720px){
+  .section-head h2{font-size:1.7rem}
+  section{padding:70px 20px}
+  .hero h1{font-size:2.4rem}
+  .slide{padding:36px 28px}
+  form{padding:26px}
+}
+/* ========================================================
+   ⚙️ پنل تنظیمات — افکت شیشه‌ای (Glassmorphism)
+======================================================== */
+
+/* دکمه شناور شیشه‌ای */
+#settingsToggle{
+  position:fixed; bottom:24px; right:24px; z-index:1100;
+  width:60px; height:60px; border-radius:50%;
+  background:rgba(255,255,255,.1);
+  backdrop-filter:blur(20px) saturate(180%);
+  -webkit-backdrop-filter:blur(20px) saturate(180%);
+  border:1px solid rgba(255,255,255,.2);
+  color:var(--text);
+  cursor:pointer; font-size:1.3rem;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 8px 32px rgba(0,0,0,.2), inset 0 1px 0 rgba(255,255,255,.15);
+  transition:all .4s cubic-bezier(.4,0,.2,1);
+  overflow:hidden;
+}
+html[dir="rtl"] #settingsToggle{right:auto; left:24px}
+#settingsToggle::before{
+  content:''; position:absolute; inset:-2px;
+  background:conic-gradient(from 0deg,
+    var(--accent), var(--accent2), var(--accent3), var(--accent));
+  border-radius:50%; opacity:0;
+  transition:opacity .3s;
+  animation:rotate 4s linear infinite;
+}
+#settingsToggle::after{
+  content:''; position:absolute; inset:2px; border-radius:50%;
+  background:rgba(10,14,26,.6);
+  backdrop-filter:blur(20px);
+}
+:root[data-theme="light"] #settingsToggle::after{background:rgba(248,250,252,.7)}
+#settingsToggle i{position:relative; z-index:1; color:var(--text); transition:transform .4s}
+#settingsToggle:hover{
+  transform:scale(1.08);
+  box-shadow:0 12px 40px color-mix(in srgb, var(--accent) 40%, transparent);
+}
+#settingsToggle:hover::before{opacity:1}
+#settingsToggle.active{transform:rotate(90deg) scale(1.05)}
+#settingsToggle.active i{transform:rotate(-90deg)}
+@keyframes rotate{to{transform:rotate(360deg)}}
+#settingsToggle .pulse-ring{
+  position:absolute; inset:0; border-radius:50%;
+  border:2px solid var(--accent);
+  opacity:0; z-index:0;
+  animation:pulseRing 2s infinite;
+}
+@keyframes pulseRing{
+  0%{transform:scale(1); opacity:.6}
+  100%{transform:scale(1.6); opacity:0}
+}
+
+/* پنل شیشه‌ای */
+#settingsPanel{
+  position:fixed; top:0; right:-420px; bottom:0; z-index:1150;
+  width:400px; max-width:100vw;
+  background:rgba(255,255,255,.06);
+  backdrop-filter:blur(30px) saturate(200%);
+  -webkit-backdrop-filter:blur(30px) saturate(200%);
+  border-left:1px solid rgba(255,255,255,.15);
+  box-shadow:-20px 0 60px rgba(0,0,0,.4), inset 1px 0 0 rgba(255,255,255,.1);
+  transition:right .5s cubic-bezier(.4,0,.2,1);
+  display:flex; flex-direction:column;
+  overflow:hidden;
+}
+:root[data-theme="light"] #settingsPanel{
+  background:rgba(255,255,255,.7);
+  border-left:1px solid rgba(255,255,255,.9);
+  box-shadow:-20px 0 60px rgba(139,92,246,.15);
+}
+html[dir="rtl"] #settingsPanel{
+  right:auto; left:-420px;
+  border-left:none; border-right:1px solid rgba(255,255,255,.15);
+  box-shadow:20px 0 60px rgba(0,0,0,.4);
+  transition:left .5s cubic-bezier(.4,0,.2,1);
+}
+#settingsPanel.open{right:0}
+html[dir="rtl"] #settingsPanel.open{right:auto; left:0}
+
+.settings-header{
+  padding:22px 24px;
+  border-bottom:1px solid rgba(255,255,255,.1);
+  display:flex; justify-content:space-between; align-items:center;
+  background:linear-gradient(135deg,
+    color-mix(in srgb, var(--accent) 15%, transparent),
+    color-mix(in srgb, var(--accent2) 15%, transparent));
+  backdrop-filter:blur(10px);
+  position:relative;
+}
+.settings-header::after{
+  content:''; position:absolute; bottom:0; left:0; right:0; height:1px;
+  background:linear-gradient(90deg,
+    transparent, var(--accent), var(--accent2), transparent);
+  opacity:.5;
+}
+.settings-header h3{
+  font-size:1.05rem; font-weight:800;
+  display:flex; align-items:center; gap:10px;
+  color:var(--text);
+}
+.settings-header h3 i{color:var(--accent); font-size:1.1rem}
+.settings-close{
+  width:38px; height:38px; border-radius:50%;
+  background:rgba(255,255,255,.1);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.15);
+  color:var(--text); cursor:pointer; font-size:.95rem;
+  display:flex; align-items:center; justify-content:center;
+  transition:all .3s;
+}
+.settings-close:hover{
+  background:#ef4444; color:#fff; border-color:#ef4444;
+  transform:rotate(90deg) scale(1.1);
+}
+.settings-body{
+  flex:1; overflow-y:auto; padding:22px 24px 28px;
+  scrollbar-width:thin;
+  scrollbar-color:rgba(255,255,255,.2) transparent;
+}
+.settings-body::-webkit-scrollbar{width:6px}
+.settings-body::-webkit-scrollbar-thumb{
+  background:rgba(255,255,255,.15); border-radius:3px;
+}
+.settings-body::-webkit-scrollbar-thumb:hover{background:var(--accent)}
+
+.settings-group{margin-bottom:28px}
+.settings-group:last-child{margin-bottom:0}
+.settings-group-title{
+  font-size:.75rem; font-weight:800;
+  letter-spacing:.1em; text-transform:uppercase;
+  color:var(--muted); margin-bottom:14px;
+  display:flex; align-items:center; gap:8px;
+  padding-bottom:10px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.settings-group-title i{color:var(--accent); font-size:.9rem}
+
+/* پالت‌ها */
+.color-presets{
+  display:grid; grid-template-columns:repeat(4,1fr);
+  gap:10px; margin-bottom:20px;
+}
+.color-preset{
+  aspect-ratio:1; border-radius:12px; cursor:pointer;
+  border:2px solid rgba(255,255,255,.1);
+  transition:all .3s cubic-bezier(.4,0,.2,1);
+  position:relative; overflow:hidden;
+  backdrop-filter:blur(10px);
+}
+.color-preset::after{
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(135deg, var(--preset-1), var(--preset-2));
+  opacity:.9;
+}
+.color-preset::before{
+  content:''; position:absolute; inset:0; z-index:1;
+  background:linear-gradient(135deg, rgba(255,255,255,.2) 0%, transparent 50%);
+  opacity:0; transition:opacity .3s;
+}
+.color-preset:hover{
+  transform:translateY(-4px) scale(1.05);
+  border-color:rgba(255,255,255,.3);
+  box-shadow:0 12px 30px rgba(0,0,0,.3);
+}
+.color-preset:hover::before{opacity:1}
+.color-preset.active{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px color-mix(in srgb, var(--accent) 30%, transparent),
+              0 8px 24px color-mix(in srgb, var(--accent) 40%, transparent);
+  transform:scale(1.05);
+}
+.color-preset.active::before{
+  content:'\f00c';
+  font-family:'Font Awesome 6 Free'; font-weight:900;
+  position:absolute; top:50%; left:50%;
+  transform:translate(-50%,-50%);
+  color:#fff; font-size:1rem; z-index:2;
+  text-shadow:0 2px 8px rgba(0,0,0,.6);
+  opacity:1;
+}
+.color-preset[data-preset="cyan"]{--preset-1:#22d3ee; --preset-2:#a78bfa}
+.color-preset[data-preset="purple"]{--preset-1:#a855f7; --preset-2:#ec4899}
+.color-preset[data-preset="green"]{--preset-1:#10b981; --preset-2:#34d399}
+.color-preset[data-preset="orange"]{--preset-1:#f59e0b; --preset-2:#ef4444}
+.color-preset[data-preset="blue"]{--preset-1:#3b82f6; --preset-2:#06b6d4}
+.color-preset[data-preset="pink"]{--preset-1:#ec4899; --preset-2:#f472b6}
+.color-preset[data-preset="red"]{--preset-1:#ef4444; --preset-2:#f59e0b}
+.color-preset[data-preset="slate"]{--preset-1:#64748b; --preset-2:#334155}
+
+/* Color Pickers */
+.color-picker-wrap{
+  display:flex; align-items:center; gap:12px;
+  padding:14px 16px; margin-bottom:10px;
+  background:rgba(255,255,255,.05);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:12px;
+  transition:all .3s;
+}
+.color-picker-wrap:hover{
+  background:rgba(255,255,255,.08);
+  border-color:rgba(255,255,255,.2);
+}
+.color-picker-wrap label{
+  flex:1; font-size:.85rem; font-weight:600; color:var(--text);
+  display:flex; align-items:center; gap:8px;
+}
+.color-picker-wrap label i{color:var(--accent); font-size:.9rem}
+.color-input{
+  width:46px; height:38px; border-radius:10px;
+  border:2px solid rgba(255,255,255,.2); cursor:pointer;
+  background:transparent; padding:0; overflow:hidden;
+  transition:all .3s;
+}
+.color-input:hover{border-color:var(--accent); transform:scale(1.05)}
+.color-input::-webkit-color-swatch-wrapper{padding:0}
+.color-input::-webkit-color-swatch{border:none; border-radius:8px}
+.color-input::-moz-color-swatch{border:none; border-radius:8px}
+
+/* فونت‌ها */
+.font-options{
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.font-option{
+  padding:14px 12px; border-radius:12px;
+  background:rgba(255,255,255,.05);
+  backdrop-filter:blur(10px);
+  border:2px solid rgba(255,255,255,.1);
+  cursor:pointer; transition:all .3s cubic-bezier(.4,0,.2,1);
+  text-align:center;
+  position:relative; overflow:hidden;
+}
+.font-option::before{
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(135deg,
+    color-mix(in srgb, var(--accent) 15%, transparent),
+    color-mix(in srgb, var(--accent2) 15%, transparent));
+  opacity:0; transition:opacity .3s;
+}
+.font-option > *{position:relative; z-index:1}
+.font-option:hover{
+  border-color:rgba(255,255,255,.3);
+  transform:translateY(-3px);
+  box-shadow:0 10px 24px rgba(0,0,0,.2);
+}
+.font-option:hover::before{opacity:1}
+.font-option.active{
+  border-color:var(--accent);
+  background:color-mix(in srgb, var(--accent) 15%, transparent);
+  box-shadow:0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent),
+              0 8px 24px color-mix(in srgb, var(--accent) 30%, transparent);
+  transform:translateY(-2px);
+}
+.font-option.active::before{opacity:1}
+.font-option .font-preview{
+  font-size:1.4rem; font-weight:700;
+  margin-bottom:4px; color:var(--text);
+}
+.font-option .font-name{
+  font-size:.72rem; color:var(--muted); font-weight:600;
+}
+.font-option.active .font-name{color:var(--accent)}
+
+/* دکمه‌های عمل */
+.settings-actions{
+  display:flex; gap:10px; margin-top:24px;
+  padding-top:20px; border-top:1px solid rgba(255,255,255,.1);
+}
+.settings-btn{
+  flex:1; padding:13px 14px; border-radius:12px;
+  border:1px solid rgba(255,255,255,.15);
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(10px);
+  color:var(--text); cursor:pointer; font-family:inherit;
+  font-size:.82rem; font-weight:700;
+  display:flex; align-items:center; justify-content:center; gap:8px;
+  transition:all .3s;
+}
+.settings-btn:hover{
+  background:rgba(255,255,255,.15);
+  border-color:rgba(255,255,255,.3);
+  transform:translateY(-2px);
+}
+.settings-btn.primary{
+  background:linear-gradient(135deg,
+    color-mix(in srgb, var(--accent) 80%, transparent),
+    color-mix(in srgb, var(--accent2) 80%, transparent));
+  color:#fff; border-color:transparent;
+  box-shadow:0 8px 24px color-mix(in srgb, var(--accent) 40%, transparent);
+}
+.settings-btn.primary:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 32px color-mix(in srgb, var(--accent) 50%, transparent);
+}
+.settings-btn.danger:hover{
+  background:#ef4444; color:#fff; border-color:#ef4444;
+}
+
+/* Backdrop */
+#settingsBackdrop{
+  position:fixed; inset:0; z-index:1140;
+  background:rgba(0,0,0,.4);
+  backdrop-filter:blur(8px) saturate(120%);
+  -webkit-backdrop-filter:blur(8px) saturate(120%);
+  opacity:0; pointer-events:none; transition:opacity .4s;
+}
+#settingsBackdrop.show{opacity:1; pointer-events:auto}
+
+/* Toast */
+#settingsToast{
+  position:fixed; bottom:100px; right:24px; z-index:1200;
+  padding:16px 22px; border-radius:14px;
+  background:rgba(255,255,255,.12);
+  backdrop-filter:blur(24px) saturate(180%);
+  -webkit-backdrop-filter:blur(24px) saturate(180%);
+  border:1px solid rgba(255,255,255,.2);
+  color:var(--text); font-weight:700; font-size:.88rem;
+  box-shadow:0 20px 60px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.15);
+  display:flex; align-items:center; gap:10px;
+  transform:translateY(120px); opacity:0;
+  transition:all .4s cubic-bezier(.4,0,.2,1);
+  pointer-events:none;
+  max-width:calc(100vw - 48px);
+}
+html[dir="rtl"] #settingsToast{right:auto; left:24px}
+#settingsToast.show{transform:translateY(0); opacity:1}
+#settingsToast i{
+  color:var(--accent); font-size:1.1rem;
+  filter:drop-shadow(0 0 8px var(--accent));
+}
+
+/* Live preview hint */
+.live-preview-hint{
+  position:fixed; top:80px; right:24px; z-index:1050;
+  padding:10px 16px; border-radius:30px;
+  background:rgba(255,255,255,.1);
+  backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,.2);
+  color:var(--text); font-size:.78rem; font-weight:600;
+  display:flex; align-items:center; gap:8px;
+  opacity:0; transform:translateY(-20px);
+  transition:all .4s;
+  pointer-events:none;
+}
+html[dir="rtl"] .live-preview-hint{right:auto; left:24px}
+.live-preview-hint.show{opacity:1; transform:translateY(0)}
+.live-preview-hint .dot-live{
+  width:8px; height:8px; border-radius:50%;
+  background:#10b981;
+  box-shadow:0 0 10px #10b981;
+  animation:pulseLive 1.5s infinite;
+}
+@keyframes pulseLive{
+  0%,100%{transform:scale(1); opacity:1}
+  50%{transform:scale(1.3); opacity:.7}
+}
+
+@media(max-width:720px){
+  #settingsPanel{width:100%; max-width:100%}
+  html[dir="rtl"] #settingsPanel{left:-100%}
+  #settingsPanel.open{right:0}
+  html[dir="rtl"] #settingsPanel.open{left:0}
+  #settingsToggle{width:54px; height:54px; font-size:1.2rem; bottom:20px}
+  html[dir="rtl"] #settingsToggle{left:20px; right:auto}
+  html[dir="ltr"] #settingsToggle{right:20px; left:auto}
+  #backTop{bottom:20px; right:auto; left:90px; width:44px; height:44px}
+  html[dir="rtl"] #backTop{left:90px; right:auto}
+  html[dir="ltr"] #backTop{right:90px; left:auto}
+}
+
+@media print{
+  #settingsToggle,#settingsPanel,#settingsBackdrop,
+  #settingsToast,.live-preview-hint{display:none !important}
+}
+</style>
+</head>
+<body>
+
+<!-- Background decoration -->
+<div class="bg-decor">
+  <div class="orb o1"></div>
+  <div class="orb o2"></div>
+  <div class="orb o3"></div>
+</div>
+
+<div id="scrollProgress"></div>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <div class="nav-brand" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+      <div class="brand-logo"><i class="fas fa-bolt"></i></div>
+      <span class="brand-name" data-fa>سینا مرادی</span>
+      <span class="brand-name" data-en>Sina Moradi</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="#home" class="active">
+          <i class="fas fa-house"></i>
+          <span data-fa>خانه</span><span data-en>Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="#work">
+          <i class="fas fa-briefcase"></i>
+          <span data-fa>کارها</span><span data-en>Work</span>
+        </a>
+      </li>
+      <li>
+        <a href="#about">
+          <i class="fas fa-user"></i>
+          <span data-fa>درباره</span><span data-en>About</span>
+        </a>
+      </li>
+      <li>
+        <a href="#exp">
+          <i class="fas fa-timeline"></i>
+          <span data-fa>سوابق</span><span data-en>Experience</span>
+        </a>
+      </li>
+      <li>
+        <a href="#contact">
+          <i class="fas fa-envelope"></i>
+          <span data-fa>تماس</span><span data-en>Contact</span>
+        </a>
+      </li>
+    </ul>
+    <div class="nav-actions">
+      <button class="ctrl-btn lang" onclick="toggleLang()">
+        <span data-fa>EN</span><span data-en>فا</span>
+      </button>
+      <button class="ctrl-btn" onclick="toggleTheme()" id="themeBtn">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="ctrl-btn" onclick="openPdf()" title="PDF">
+        <i class="fas fa-file-pdf"></i>
+      </button>
+      <button class="hamburger" onclick="toggleMenu()" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home" onclick="closeMenu()"><i class="fas fa-house"></i><span data-fa>خانه</span><span data-en>Home</span></a>
+  <a href="#work" onclick="closeMenu()"><i class="fas fa-briefcase"></i><span data-fa>کارها</span><span data-en>Work</span></a>
+  <a href="#about" onclick="closeMenu()"><i class="fas fa-user"></i><span data-fa>درباره</span><span data-en>About</span></a>
+  <a href="#exp" onclick="closeMenu()"><i class="fas fa-timeline"></i><span data-fa>سوابق</span><span data-en>Experience</span></a>
+  <a href="#testi" onclick="closeMenu()"><i class="fas fa-comments"></i><span data-fa>نظرات</span><span data-en>Testimonials</span></a>
+  <a href="#contact" onclick="closeMenu()"><i class="fas fa-envelope"></i><span data-fa>تماس</span><span data-en>Contact</span></a>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="home">
+  <span class="eyebrow">
+    <span class="pulse"></span>
+    <i class="fas fa-circle-check"></i>
+    <span data-fa>آماده پذیرش پروژه جدید</span>
+    <span data-en>Available for new work</span>
+  </span>
+  <h1>
+    <span data-fa>سینا <span class="grad">مرادی</span></span>
+    <span data-en>Sina <span class="grad">Moradi</span></span>
+  </h1>
+  <p class="bio" data-fa>طراح و توسعه‌دهنده مستقل. تجربه‌های دیجیتال می‌سازم که ساده، زیبا و کاربردی باشند — با تمرکز بر جزئیات و توجه به آنچه واقعاً اهمیت دارد.</p>
+  <p class="bio" data-en>Independent designer & developer. I craft digital experiences that are simple, beautiful and functional — focused on detail and what truly matters.</p>
+  <div class="cta">
+    <a href="#work" class="btn btn-primary">
+      <i class="fas fa-eye"></i>
+      <span data-fa>دیدن کارها</span><span data-en>View Work</span>
+    </a>
+    <a href="#contact" class="btn btn-ghost">
+      <i class="fas fa-paper-plane"></i>
+      <span data-fa>تماس با من</span><span data-en>Get in Touch</span>
+    </a>
+  </div>
+  <div class="meta">
+    <div class="meta-card">
+      <div class="mc-icon"><i class="fas fa-briefcase"></i></div>
+      <div class="v" data-count="42">0</div>
+      <div class="l" data-fa>پروژه تحویل‌شده</div><div class="l" data-en>Projects Done</div>
+    </div>
+    <div class="meta-card">
+      <div class="mc-icon"><i class="fas fa-calendar-check"></i></div>
+      <div class="v" data-count="8">0</div>
+      <div class="l" data-fa>سال تجربه</div><div class="l" data-en>Years Experience</div>
+    </div>
+    <div class="meta-card">
+      <div class="mc-icon"><i class="fas fa-users"></i></div>
+      <div class="v" data-count="18">0</div>
+      <div class="l" data-fa>مشتری ثابت</div><div class="l" data-en>Clients</div>
+    </div>
+    <div class="meta-card">
+      <div class="mc-icon"><i class="fas fa-trophy"></i></div>
+      <div class="v" data-count="5">0</div>
+      <div class="l" data-fa>جایزه طراحی</div><div class="l" data-en>Awards</div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ WORK ============ -->
+<section id="work">
+  <div class="section-head reveal">
+    <span class="kicker">
+      <i class="fas fa-briefcase"></i>
+      <span data-fa>پورتفولیو</span>
+      <span data-en>Portfolio</span>
+    </span>
+    <h2>
+      <span data-fa>کارهای <span class="grad">منتخب</span></span>
+      <span data-en>Selected <span class="grad">Work</span></span>
+    </h2>
+    <p class="sub" data-fa>مجموعه‌ای از پروژه‌ها در طراحی رابط کاربری، برندینگ و توسعه فرانت‌اند</p>
+    <p class="sub" data-en>A selection of UI design, branding and frontend development projects</p>
+  </div>
+
+  <div class="filters reveal">
+    <button class="filter-btn active" data-filter="all">
+      <i class="fas fa-grip"></i>
+      <span data-fa>همه</span><span data-en>All</span>
+    </button>
+    <button class="filter-btn" data-filter="design">
+      <i class="fas fa-palette"></i>
+      <span data-fa>طراحی</span><span data-en>Design</span>
+    </button>
+    <button class="filter-btn" data-filter="dev">
+      <i class="fas fa-code"></i>
+      <span data-fa>توسعه</span><span data-en>Dev</span>
+    </button>
+    <button class="filter-btn" data-filter="brand">
+      <i class="fas fa-tag"></i>
+      <span data-fa>برندینگ</span><span data-en>Branding</span>
+    </button>
+  </div>
+
+  <div class="work-list">
+    <div class="work-item reveal" data-cat="design"
+         data-title-fa="طراحی اپلیکیشن موبایل" data-title-en="Mobile App Design"
+         data-desc-fa="طراحی کامل رابط کاربری اپلیکیشن یادگیری زبان با تمرکز بر تجربه کاربری ساده و انیمیشن‌های معنادار. شامل ۳۸ صفحه و سیستم طراحی اختصاصی." data-desc-en="Complete UI design for a language learning app focused on simple UX and meaningful animations. Includes 38 screens and custom design system."
+         data-client-fa="استارتاپ Lingo" data-client-en="Lingo Startup"
+         data-year="1402 / 2023"
+         data-role-fa="طراح ارشد" data-role-en="Lead Designer"
+         data-tags="UI Design,Figma,Prototyping,Mobile"
+         data-live="#" data-github="#">
+      <div class="num">01</div>
+      <div class="title" data-fa>طراحی اپلیکیشن موبایل</div>
+      <div class="title" data-en>Mobile App Design</div>
+      <div class="cat">
+        <i class="fas fa-palette"></i>
+        <span data-fa>طراحی</span><span data-en>Design</span>
+      </div>
+      <div class="year"><i class="fas fa-calendar"></i> 2023</div>
+    </div>
+
+    <div class="work-item reveal" data-cat="dev"
+         data-title-fa="وب‌سایت شرکتی" data-title-en="Corporate Website"
+         data-desc-fa="توسعه وب‌سایت شرکتی با React و Next.js. تمرکز بر سرعت بارگذاری زیر ۱ ثانیه، SEO کامل و طراحی مینیمال." data-desc-en="Corporate website development with React and Next.js. Focused on sub-1s load time, full SEO and minimalist design."
+         data-client-fa="شرکت مشاوره" data-client-en="Consulting Firm"
+         data-year="1402 / 2023"
+         data-role-fa="توسعه‌دهنده" data-role-en="Developer"
+         data-tags="React,Next.js,SEO,Performance"
+         data-live="#" data-github="#">
+      <div class="num">02</div>
+      <div class="title" data-fa>وب‌سایت شرکتی</div>
+      <div class="title" data-en>Corporate Website</div>
+      <div class="cat">
+        <i class="fas fa-code"></i>
+        <span data-fa>توسعه</span><span data-en>Dev</span>
+      </div>
+      <div class="year"><i class="fas fa-calendar"></i> 2023</div>
+    </div>
+
+    <div class="work-item reveal" data-cat="brand"
+         data-title-fa="هویت بصری کافه" data-title-en="Cafe Brand Identity"
+         data-desc-fa="طراحی هویت بصری مینیمال برای کافه تخصصی. لوگو، تایپوگرافی، بسته‌بندی و راهنمای برند." data-desc-en="Minimalist brand identity for a specialty cafe. Logo, typography, packaging and brand guidelines."
+         data-client-fa="کافه زیرو" data-client-en="Zero Cafe"
+         data-year="1401 / 2022"
+         data-role-fa="طراح برند" data-role-en="Brand Designer"
+         data-tags="Branding,Logo,Typography,Packaging"
+         data-live="#" data-github="#">
+      <div class="num">03</div>
+      <div class="title" data-fa>هویت بصری کافه</div>
+      <div class="title" data-en>Cafe Brand Identity</div>
+      <div class="cat">
+        <i class="fas fa-tag"></i>
+        <span data-fa>برندینگ</span><span data-en>Branding</span>
+      </div>
+      <div class="year"><i class="fas fa-calendar"></i> 2022</div>
+    </div>
+
+    <div class="work-item reveal" data-cat="design"
+         data-title-fa="داشبورد تحلیلی" data-title-en="Analytics Dashboard"
+         data-desc-fa="طراحی رابط کاربری داشبورد تحلیلی برای استارتاپ SaaS. شامل ۲۴ نمودار تعاملی و حالت دارک." data-desc-en="UI design for a SaaS startup analytics dashboard. Includes 24 interactive charts and dark mode."
+         data-client-fa="استارتاپ دیتا" data-client-en="Data Startup"
+         data-year="1401 / 2022"
+         data-role-fa="طراح UI" data-role-en="UI Designer"
+         data-tags="Dashboard,Data Viz,SaaS,Figma"
+         data-live="#" data-github="#">
+      <div class="num">04</div>
+      <div class="title" data-fa>داشبورد تحلیلی</div>
+      <div class="title" data-en>Analytics Dashboard</div>
+      <div class="cat">
+        <i class="fas fa-palette"></i>
+        <span data-fa>طراحی</span><span data-en>Design</span>
+      </div>
+      <div class="year"><i class="fas fa-calendar"></i> 2022</div>
+    </div>
+
+    <div class="work-item reveal" data-cat="dev"
+         data-title-fa="اپلیکیشن وب فروشگاهی" data-title-en="E-commerce Web App"
+         data-desc-fa="توسعه اپلیکیشن فروشگاهی با Next.js، Stripe و Tailwind. طراحی تمرکز‌محور بر فرایند خرید ساده." data-desc-en="E-commerce app development with Next.js, Stripe and Tailwind. Focused on simplified checkout flow."
+         data-client-fa="فروشگاه آنلاین" data-client-en="Online Store"
+         data-year="1400 / 2021"
+         data-role-fa="توسعه‌دهنده فول‌استک" data-role-en="Full-Stack Dev"
+         data-tags="Next.js,Stripe,Tailwind,E-commerce"
+         data-live="#" data-github="#">
+      <div class="num">05</div>
+      <div class="title" data-fa>اپلیکیشن وب فروشگاهی</div>
+      <div class="title" data-en>E-commerce Web App</div>
+      <div class="cat">
+        <i class="fas fa-code"></i>
+        <span data-fa>توسعه</span><span data-en>Dev</span>
+      </div>
+      <div class="year"><i class="fas fa-calendar"></i> 2021</div>
+    </div>
+
+    <div class="work-item reveal" data-cat="brand"
+         data-title-fa="هویت بصری استودیو" data-title-en="Studio Brand Identity"
+         data-desc-fa="طراحی هویت بصری برای استودیو معماری. لوگو مینیمال، سیستم تایپوگرافی و راهنمای برند." data-desc-en="Brand identity for an architecture studio. Minimal logo, typography system and brand guide."
+         data-client-fa="استودیو معماری" data-client-en="Architecture Studio"
+         data-year="1400 / 2021"
+         data-role-fa="طراح برند" data-role-en="Brand Designer"
+         data-tags="Branding,Logo,Architecture,Minimal"
+         data-live="#" data-github="#">
+      <div class="num">06</div>
+      <div class="title" data-fa>هویت بصری استودیو</div>
+      <div class="title" data-en>Studio Brand Identity</div>
+      <div class="cat">
+        <i class="fas fa-tag"></i>
+        <span data-fa>برندینگ</span><span data-en>Branding</span>
+      </div>
+      <div class="year"><i class="fas fa-calendar"></i> 2021</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="section-head reveal">
+    <span class="kicker">
+      <i class="fas fa-user"></i>
+      <span data-fa>درباره من</span>
+      <span data-en>About</span>
+    </span>
+    <h2>
+      <span data-fa>چند خط <span class="grad">درباره‌ام</span></span>
+      <span data-en>A few words <span class="grad">about me</span></span>
+    </h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p data-fa>سلام، من سینا هستم. طراح و توسعه‌دهنده‌ای که به سادگی باور دارد.</p>
+      <p data-en>Hi, I'm Sina. A designer and developer who believes in simplicity.</p>
+      <p data-fa>در طول ۸ سال گذشته، روی پروژه‌هایی در حوزه‌های مختلف کار کرده‌ام — از طراحی اپلیکیشن‌های موبایل و داشبوردهای پیچیده، تا برندینگ و توسعه وب. اما یک چیز در همه آن‌ها مشترک بوده: تلاش برای حذف هر چیزی که ضروری نیست.</p>
+      <p data-en>Over the past 8 years, I've worked on projects across various domains — from mobile app design and complex dashboards to branding and web development. But one thing has always been constant: trying to remove everything that isn't essential.</p>
+      <p data-fa>باور دارم که طراحی خوب، طراحی‌ای است که دیده نشود. طراحی‌ای که فقط کار کند و اجازه دهد محتوا بدرخشد.</p>
+      <p data-en>I believe good design is design that goes unnoticed. Design that simply works and lets content shine.</p>
+    </div>
+    <div class="about-list reveal">
+      <div class="item">
+        <span class="k"><i class="fas fa-location-dot"></i><span data-fa>موقعیت</span><span data-en>Location</span></span>
+        <span class="v" data-fa>تهران، ایران</span><span class="v" data-en>Tehran, Iran</span>
+      </div>
+      <div class="item">
+        <span class="k"><i class="fas fa-calendar-check"></i><span data-fa>تجربه</span><span data-en>Experience</span></span>
+        <span class="v" data-fa>۸ سال</span><span class="v" data-en>8 years</span>
+      </div>
+      <div class="item">
+        <span class="k"><i class="fas fa-bullseye"></i><span data-fa>تخصص</span><span data-en>Focus</span></span>
+        <span class="v">UI/UX + Frontend</span>
+      </div>
+      <div class="item">
+        <span class="k"><i class="fas fa-language"></i><span data-fa>زبان‌ها</span><span data-en>Languages</span></span>
+        <span class="v">فارسی / English</span>
+      </div>
+      <div class="item">
+        <span class="k"><i class="fas fa-toolbox"></i><span data-fa>ابزارها</span><span data-en>Tools</span></span>
+        <span class="v">Figma, React, Next.js</span>
+      </div>
+      <div class="item">
+        <span class="k"><i class="fas fa-circle-check"></i><span data-fa>وضعیت</span><span data-en>Status</span></span>
+        <span class="v" data-fa>آماده پروژه</span><span class="v" data-en>Available</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section id="exp">
+  <div class="section-head reveal">
+    <span class="kicker">
+      <i class="fas fa-timeline"></i>
+      <span data-fa>سوابق</span>
+      <span data-en>Experience</span>
+    </span>
+    <h2>
+      <span data-fa>مسیر <span class="grad">حرفه‌ای</span></span>
+      <span data-en>Career <span class="grad">Path</span></span>
+    </h2>
+  </div>
+  <div class="timeline">
+    <div class="tl-item reveal">
+      <div class="date">
+        <i class="fas fa-calendar"></i>
+        <span>1399 - اکنون / 2020 - Present</span>
+      </div>
+      <h3 data-fa>طراح و توسعه‌دهنده مستقل</h3>
+      <h3 data-en>Independent Designer & Developer</h3>
+      <div class="company">
+        <i class="fas fa-globe"></i>
+        <span data-fa>پروژه‌های بین‌المللی</span>
+        <span data-en>International Projects</span>
+      </div>
+      <p data-fa>همکاری با بیش از ۱۸ مشتری در ایران، ترکیه و آلمان. تمرکز بر طراحی مدرن و توسعه فرانت‌اند.</p>
+      <p data-en>Worked with 18+ clients across Iran, Turkey and Germany. Focused on modern design and frontend development.</p>
+    </div>
+    <div class="tl-item reveal">
+      <div class="date">
+        <i class="fas fa-calendar"></i>
+        <span>1397 - 1399 / 2018 - 2020</span>
+      </div>
+      <h3 data-fa>طراح ارشد UI/UX</h3>
+      <h3 data-en>Senior UI/UX Designer</h3>
+      <div class="company">
+        <i class="fas fa-building"></i>
+        <span data-fa>استودیو طراحی مینیمال</span>
+        <span data-en>Minimal Design Studio</span>
+      </div>
+      <p data-fa>رهبری تیم طراحی محصول، ایجاد سیستم طراحی و طراحی ۱۵+ اپلیکیشن موبایل.</p>
+      <p data-en>Led product design team, established design system and designed 15+ mobile apps.</p>
+    </div>
+    <div class="tl-item reveal">
+      <div class="date">
+        <i class="fas fa-calendar"></i>
+        <span>1395 - 1397 / 2016 - 2018</span>
+      </div>
+      <h3 data-fa>توسعه‌دهنده فرانت‌اند</h3>
+      <h3 data-en>Frontend Developer</h3>
+      <div class="company">
+        <i class="fas fa-building"></i>
+        <span data-fa>استارتاپ فناوری</span>
+        <span data-en>Tech Startup</span>
+      </div>
+      <p data-fa>توسعه رابط کاربری با React و TypeScript. بازنویسی کامل سیستم قدیمی و بهبود ۶۰٪ سرعت بارگذاری.</p>
+      <p data-en>UI development with React and TypeScript. Complete rewrite of legacy system improving load time by 60%.</p>
+    </div>
+    <div class="tl-item reveal">
+      <div class="date">
+        <i class="fas fa-calendar"></i>
+        <span>1394 - 1395 / 2015 - 2016</span>
+      </div>
+      <h3 data-fa>طراح گرافیک</h3>
+      <h3 data-en>Graphic Designer</h3>
+      <div class="company">
+        <i class="fas fa-building"></i>
+        <span data-fa>آژانس خلاقیت</span>
+        <span data-en>Creative Agency</span>
+      </div>
+      <p data-fa>طراحی هویت بصری، پوستر و محتوای بصری برای برندهای مختلف.</p>
+      <p data-en>Brand identity, poster and visual content design for various brands.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section id="testi">
+  <div class="section-head reveal">
+    <span class="kicker">
+      <i class="fas fa-comments"></i>
+      <span data-fa>نظرات</span>
+      <span data-en>Testimonials</span>
+    </span>
+    <h2>
+      <span data-fa>چه <span class="grad">می‌گویند</span></span>
+      <span data-en>What they <span class="grad">say</span></span>
+    </h2>
+  </div>
+  <div class="slider-wrap reveal">
+    <div class="slider" id="slider">
+      <div class="slide">
+        <p class="quote" data-fa>سینا فقط یک طراح نیست، یک متفکر طراحی است. کارش با ما را کاملاً متحول کرد.</p>
+        <p class="quote" data-en>Sina isn't just a designer, he's a design thinker. His work completely transformed our business.</p>
+        <div class="author-wrap">
+          <div class="author-avatar">م</div>
+          <div class="author-info">
+            <div class="name">مریم احمدی</div>
+            <div class="role"><i class="fas fa-user-tie"></i><span data-fa>بنیان‌گذار استارتاپ</span><span data-en>Startup Founder</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="slide">
+        <p class="quote" data-fa>کمتر کسی را دیده‌ام که اینقدر به جزئیات اهمیت بدهد. سادگی کارش، نتیجه سال‌ها تجربه است.</p>
+        <p class="quote" data-en>I've rarely seen anyone care so much about details. The simplicity of his work is the result of years of experience.</p>
+        <div class="author-wrap">
+          <div class="author-avatar">ر</div>
+          <div class="author-info">
+            <div class="name">رضا کریمی</div>
+            <div class="role"><i class="fas fa-user-tie"></i><span data-fa>مدیر محصول</span><span data-en>Product Manager</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="slide">
+        <p class="quote" data-fa>همکاری با سینا یکی از بهترین تصمیمات حرفه‌ای من بود. دقیق، متعهد و خلاق.</p>
+        <p class="quote" data-en>Working with Sina was one of my best professional decisions. Precise, committed and creative.</p>
+        <div class="author-wrap">
+          <div class="author-avatar">ن</div>
+          <div class="author-info">
+            <div class="name">نگار تهرانی</div>
+            <div class="role"><i class="fas fa-user-tie"></i><span data-fa>مدیر بازاریابی</span><span data-en>Marketing Director</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slider-nav" id="sliderNav"></div>
+  </div>
+</section>
+
+<!-- ============ AWARDS ============ -->
+<section>
+  <div class="section-head reveal">
+    <span class="kicker">
+      <i class="fas fa-trophy"></i>
+      <span data-fa>افتخارات</span>
+      <span data-en>Awards</span>
+    </span>
+    <h2>
+      <span data-fa>جوایز و <span class="grad">گواهینامه‌ها</span></span>
+      <span data-en>Awards & <span class="grad">Certificates</span></span>
+    </h2>
+  </div>
+  <div class="certs">
+    <div class="cert reveal">
+      <div class="cert-icon"><i class="fas fa-trophy"></i></div>
+      <span class="year-badge"><i class="fas fa-calendar"></i> 1402 / 2023</span>
+      <h4 data-fa>جایزه طراحی مینیمال ایران</h4>
+      <h4 data-en>Iran Minimal Design Award</h4>
+      <p data-fa>انجمن طراحان گرافیک</p>
+      <p data-en>Graphic Designers Association</p>
+    </div>
+    <div class="cert reveal">
+      <div class="cert-icon"><i class="fas fa-award"></i></div>
+      <span class="year-badge"><i class="fas fa-calendar"></i> 1401 / 2022</span>
+      <h4>Awwwards Honorable Mention</h4>
+      <p>Awwwards.com</p>
+    </div>
+    <div class="cert reveal">
+      <div class="cert-icon"><i class="fab fa-google"></i></div>
+      <span class="year-badge"><i class="fas fa-calendar"></i> 1400 / 2021</span>
+      <h4>Google UX Design Certificate</h4>
+      <p>Coursera</p>
+    </div>
+    <div class="cert reveal">
+      <div class="cert-icon"><i class="fas fa-users"></i></div>
+      <span class="year-badge"><i class="fas fa-calendar"></i> 1399 / 2020</span>
+      <h4 data-fa>عضو انجمن طراحان ایران</h4>
+      <h4 data-en>Member, Iranian Designers Society</h4>
+      <p data-fa>تهران</p><p data-en>Tehran</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <div class="section-head reveal">
+    <span class="kicker">
+      <i class="fas fa-envelope"></i>
+      <span data-fa>تماس</span>
+      <span data-en>Contact</span>
+    </span>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-intro reveal">
+      <h3>
+        <span data-fa>بیایید درباره <span class="grad">پروژه‌تان</span> صحبت کنیم.</span>
+        <span data-en>Let's talk about your <span class="grad">project</span>.</span>
+      </h3>
+      <p data-fa>اگر ایده‌ای در سر دارید یا پروژه‌ای برای همکاری، خوشحال می‌شوم بشنوم. معمولاً در ۲۴ ساعت پاسخ می‌دهم.</p>
+      <p data-en>If you have an idea or a project to collaborate on, I'd love to hear. I usually respond within 24 hours.</p>
+
+      <div class="contact-item" onclick="copyText('sina@example.com', this)">
+        <div class="left">
+          <div class="ic"><i class="fas fa-envelope"></i></div>
+          <div>
+            <div class="k">Email</div>
+            <div class="v">sina@example.com</div>
+          </div>
+        </div>
+        <div class="copy-hint">
+          <i class="fas fa-copy"></i>
+          <span data-fa>کپی</span><span data-en>Copy</span>
+        </div>
+      </div>
+      <div class="contact-item" onclick="copyText('+989121234567', this)">
+        <div class="left">
+          <div class="ic"><i class="fas fa-mobile-screen"></i></div>
+          <div>
+            <div class="k" data-fa>تلفن</div><div class="k" data-en>Phone</div>
+            <div class="v">+98 912 123 4567</div>
+          </div>
+        </div>
+        <div class="copy-hint">
+          <i class="fas fa-copy"></i>
+          <span data-fa>کپی</span><span data-en>Copy</span>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="left">
+          <div class="ic"><i class="fas fa-location-dot"></i></div>
+          <div>
+            <div class="k" data-fa>موقعیت</div><div class="k" data-en>Location</div>
+            <div class="v" data-fa>تهران، ایران</div>
+            <div class="v" data-en>Tehran, Iran</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form id="contactForm" class="reveal" onsubmit="return submitForm(event)">
+      <h3>
+        <i class="fas fa-paper-plane"></i>
+        <span data-fa>ارسال پیام</span>
+        <span data-en>Send a message</span>
+      </h3>
+      <p class="sub" data-fa>معمولاً در کمتر از ۲۴ ساعت پاسخ می‌دهم</p>
+      <p class="sub" data-en>I usually respond within 24 hours</p>
+      <div class="field">
+        <label><i class="fas fa-user"></i><span data-fa>نام</span><span data-en>Name</span></label>
+        <input type="text" id="fName">
+        <div class="err-msg" id="errName" data-fa>لطفاً نام خود را وارد کنید</div>
+        <div class="err-msg" id="errNameEn" data-en>Please enter your name</div>
+      </div>
+      <div class="field">
+        <label><i class="fas fa-envelope"></i> Email</label>
+        <input type="email" id="fEmail">
+        <div class="err-msg" id="errEmail" data-fa>ایمیل معتبر وارد کنید</div>
+        <div class="err-msg" id="errEmailEn" data-en>Enter a valid email</div>
+      </div>
+      <div class="field">
+        <label><i class="fas fa-comment"></i><span data-fa>پیام</span><span data-en>Message</span></label>
+        <textarea id="fMsg" data-fa-placeholder="درباره پروژه بنویسید..." data-en-placeholder="Tell me about your project..."></textarea>
+        <div class="err-msg" id="errMsg" data-fa>پیام نمی‌تواند خالی باشد</div>
+        <div class="err-msg" id="errMsgEn" data-en>Message cannot be empty</div>
+      </div>
+      <button type="submit" class="btn btn-primary">
+        <i class="fas fa-paper-plane"></i>
+        <span data-fa>ارسال پیام</span>
+        <span data-en>Send Message</span>
+      </button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="credit">
+    <i class="fas fa-heart"></i>
+    <span data-fa>© ۱۴۰۴ سینا مرادی — ساخته شده با HTML، CSS و JavaScript</span>
+    <span data-en>© 2025 Sina Moradi — Built with pure HTML, CSS & JavaScript</span>
+  </div>
+  <div class="share">
+    <a href="https://github.com/" target="_blank" rel="noopener">
+      <i class="fab fa-github"></i>
+      <span>GitHub</span>
+    </a>
+    <a href="https://dribbble.com/" target="_blank" rel="noopener">
+      <i class="fab fa-dribbble"></i>
+      <span>Dribbble</span>
+    </a>
+    <a href="https://linkedin.com/" target="_blank" rel="noopener">
+      <i class="fab fa-linkedin-in"></i>
+      <span>LinkedIn</span>
+    </a>
+    <a href="index.html">
+      <i class="fas fa-arrow-right"></i>
+      <span data-fa>قالب‌ها</span><span data-en>Templates</span>
+    </a>
+  </div>
+</footer>
+
+<!-- ============ PROJECT MODAL ============ -->
+<div class="modal" id="projectModal">
+  <div class="modal-box">
+    <button class="close-x" onclick="closeProject()">
+      <i class="fas fa-xmark"></i>
+    </button>
+    <div class="modal-hero">
+      <div class="cat">
+        <i class="fas fa-folder-open"></i>
+        <span id="modalCat">Category</span>
+      </div>
+      <h2 id="modalTitle">Title</h2>
+      <div class="meta">
+        <span><i class="fas fa-user"></i> <span id="modalClient"></span></span>
+        <span><i class="fas fa-calendar"></i> <span id="modalYear"></span></span>
+        <span><i class="fas fa-user-tag"></i> <span id="modalRole"></span></span>
+      </div>
+    </div>
+    <div class="modal-body">
+      <p id="modalDesc"></p>
+      <div class="tags" id="modalTags"></div>
+      <div class="modal-actions">
+        <a href="#" id="modalLive" target="_blank" rel="noopener" class="btn btn-primary">
+          <i class="fas fa-up-right-from-square"></i>
+          <span data-fa>مشاهده آنلاین</span>
+          <span data-en>View Live</span>
+        </a>
+        <a href="#" id="modalGithub" target="_blank" rel="noopener" class="btn btn-ghost">
+          <i class="fas fa-circle-info"></i>
+          <span data-fa>جزئیات بیشتر</span>
+          <span data-en>More Details</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PDF MODAL ============ -->
+<div class="pdf-modal" id="pdfModal">
+  <div class="inner">
+    <div class="head">
+      <strong>
+        <i class="fas fa-file-pdf"></i>
+        <span data-fa>رزومه PDF</span>
+        <span data-en>PDF Resume</span>
+      </strong>
+      <button onclick="closePdf()">
+        <i class="fas fa-xmark"></i>
+      </button>
+    </div>
+    <iframe id="pdfFrame" src=""></iframe>
+  </div>
+</div>
+
+<button id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script>
+/* ============ LANGUAGE ============ */
+let lang = localStorage.getItem('lang') || 'fa';
+function applyLang(){
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
+  document.querySelectorAll('[data-fa]').forEach(el=>{
+    el.style.display = lang === 'fa' ? '' : 'none';
+  });
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    el.style.display = lang === 'en' ? '' : 'none';
+  });
+  document.querySelectorAll('[data-fa-placeholder]').forEach(el=>{
+    el.placeholder = lang === 'fa' ? el.dataset.faPlaceholder : el.dataset.enPlaceholder;
+  });
+}
+function toggleLang(){
+  lang = lang === 'fa' ? 'en' : 'fa';
+  localStorage.setItem('lang', lang);
+  applyLang();
+  if(currentProject) renderProject(currentProject);
+}
+applyLang();
+
+/* ============ THEME ============ */
+let theme = localStorage.getItem('theme') || 'dark';
+function applyTheme(){
+  document.documentElement.setAttribute('data-theme', theme);
+  const btn = document.getElementById('themeBtn');
+  btn.innerHTML = theme === 'dark'
+    ? '<i class="fas fa-sun"></i>'
+    : '<i class="fas fa-moon"></i>';
+}
+function toggleTheme(){
+  theme = theme === 'dark' ? 'light' : 'dark';
+  localStorage.setItem('theme', theme);
+  applyTheme();
+}
+applyTheme();
+
+/* ============ MOBILE MENU ============ */
+function toggleMenu(){
+  const menu = document.getElementById('mobileMenu');
+  const btn = document.getElementById('hamburger');
+  menu.classList.toggle('open');
+  const isOpen = menu.classList.contains('open');
+  btn.innerHTML = isOpen
+    ? '<i class="fas fa-xmark"></i>'
+    : '<i class="fas fa-bars"></i>';
+}
+function closeMenu(){
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.getElementById('hamburger').innerHTML = '<i class="fas fa-bars"></i>';
+}
+
+/* ============ PDF ============ */
+function openPdf(){
+  const modal = document.getElementById('pdfModal');
+  const frame = document.getElementById('pdfFrame');
+  const file = lang === 'fa' ? 'assets/resume-fa.pdf' : 'assets/resume-en.pdf';
+  frame.src = file + '#toolbar=1&view=FitH';
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closePdf(){
+  document.getElementById('pdfModal').classList.remove('open');
+  document.getElementById('pdfFrame').src = '';
+  document.body.style.overflow = '';
+}
+
+/* ============ PROJECT MODAL ============ */
+let currentProject = null;
+document.querySelectorAll('.work-item').forEach(item=>{
+  item.addEventListener('click', ()=> openProject(item));
+});
+function openProject(item){
+  currentProject = item;
+  renderProject(item);
+  document.getElementById('projectModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function renderProject(item){
+  const d = item.dataset;
+  const isFa = lang === 'fa';
+  const catEl = item.querySelector('.cat');
+  document.getElementById('modalCat').textContent = catEl ? catEl.textContent.trim() : '';
+  document.getElementById('modalTitle').textContent = isFa ? d.titleFa : d.titleEn;
+  document.getElementById('modalClient').textContent = isFa ? d.clientFa : d.clientEn;
+  document.getElementById('modalYear').textContent = d.year;
+  document.getElementById('modalRole').textContent = isFa ? d.roleFa : d.roleEn;
+  document.getElementById('modalDesc').textContent = isFa ? d.descFa : d.descEn;
+  const tags = d.tags.split(',').map(t=>`<span>${t.trim()}</span>`).join('');
+  document.getElementById('modalTags').innerHTML = tags;
+  document.getElementById('modalLive').href = d.live;
+  document.getElementById('modalGithub').href = d.github;
+}
+function closeProject(){
+  document.getElementById('projectModal').classList.remove('open');
+  document.body.style.overflow = '';
+  currentProject = null;
+}
+
+document.addEventListener('keydown', e=>{
+  if(e.key === 'Escape'){ closePdf(); closeProject(); closeMenu(); }
+});
+
+/* ============ SCROLL ============ */
+window.addEventListener('scroll', ()=>{
+  const h = document.documentElement;
+  const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+  document.getElementById('scrollProgress').style.width = pct + '%';
+  document.getElementById('backTop').classList.toggle('show', h.scrollTop > 400);
+  document.getElementById('navbar').classList.toggle('scrolled', h.scrollTop > 20);
+  updateActiveNav();
+});
+function updateActiveNav(){
+  const sections = document.querySelectorAll('section[id], header[id]');
+  const scrollPos = window.scrollY + 120;
+  let active = 'home';
+  sections.forEach(sec=>{ if(sec.offsetTop <= scrollPos) active = sec.id; });
+  document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(a=>{
+    const href = a.getAttribute('href');
+    if(href === '#' + active) a.classList.add('active');
+    else a.classList.remove('active');
+  });
+}
+
+/* ============ REVEAL ============ */
+const revealObs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){ e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+  });
+},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>revealObs.observe(el));
+
+/* ============ COUNTER ============ */
+const counterObs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const el = e.target;
+      const target = +el.dataset.count;
+      let cur = 0;
+      const step = Math.max(1, Math.floor(target/60));
+      const timer = setInterval(()=>{
+        cur += step;
+        if(cur >= target){ cur = target; clearInterval(timer); }
+        el.textContent = cur + (target >= 100 ? '+' : '');
+      }, 20);
+      counterObs.unobserve(el);
+    }
+  });
+},{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>counterObs.observe(el));
+
+/* ============ FILTER ============ */
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.filter-btn').forEach(b=>{
+      if(b.dataset.filter === filter) b.classList.add('active');
+      else b.classList.remove('active');
+    });
+    document.querySelectorAll('.work-item').forEach(item=>{
+      if(filter === 'all' || item.dataset.cat === filter) item.classList.remove('hide');
+      else item.classList.add('hide');
+    });
+  });
+});
+
+/* ============ SLIDER ============ */
+const slider = document.getElementById('slider');
+const slides = slider.querySelectorAll('.slide');
+const nav = document.getElementById('sliderNav');
+let current = 0;
+slides.forEach((_, i)=>{
+  const b = document.createElement('button');
+  if(i === 0) b.classList.add('active');
+  b.addEventListener('click', ()=>goSlide(i));
+  nav.appendChild(b);
+});
+function goSlide(i){
+  current = i;
+  const dir = document.documentElement.dir === 'rtl' ? 1 : -1;
+  slider.style.transform = `translateX(${i * 100 * dir}%)`;
+  nav.querySelectorAll('button').forEach((b, idx)=>{
+    b.classList.toggle('active', idx === i);
+  });
+}
+setInterval(()=>goSlide((current + 1) % slides.length), 7000);
+
+/* ============ COPY ============ */
+function copyText(text, el){
+  navigator.clipboard.writeText(text).then(()=>{
+    const hint = el.querySelector('.copy-hint');
+    const orig = hint.innerHTML;
+    hint.innerHTML = lang === 'fa'
+      ? '<i class="fas fa-check"></i> شد'
+      : '<i class="fas fa-check"></i> Done';
+    setTimeout(()=>{ hint.innerHTML = orig; }, 1500);
+  });
+}
+
+/* ============ FORM ============ */
+function submitForm(e){
+  e.preventDefault();
+  let ok = true;
+  const name = document.getElementById('fName');
+  const email = document.getElementById('fEmail');
+  const msg = document.getElementById('fMsg');
+  [name, email, msg].forEach(el=>el.closest('.field').classList.remove('error'));
+  document.querySelectorAll('.err-msg').forEach(el=>el.classList.remove('show'));
+  if(!name.value.trim()){
+    name.closest('.field').classList.add('error');
+    document.getElementById('errName').classList.add('show');
+    document.getElementById('errNameEn').classList.add('show');
+    ok = false;
+  }
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)){
+    email.closest('.field').classList.add('error');
+    document.getElementById('errEmail').classList.add('show');
+    document.getElementById('errEmailEn').classList.add('show');
+    ok = false;
+  }
+  if(!msg.value.trim()){
+    msg.closest('.field').classList.add('error');
+    document.getElementById('errMsg').classList.add('show');
+    document.getElementById('errMsgEn').classList.add('show');
+    ok = false;
+  }
+  if(ok){
+    alert(lang === 'fa' ? '✓ پیام شما ارسال شد!' : '✓ Your message was sent!');
+    e.target.reset();
+  }
+  return false;
+}
+
+/* ============ SMOOTH SCROLL ============ */
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click', e=>{
+    const href = a.getAttribute('href');
+    if(href === '#') return;
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if(target){
+      const top = target.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({top, behavior:'smooth'});
+      closeMenu();
+    }
+  });
+});
+
+document.getElementById('projectModal').addEventListener('click', e=>{
+  if(e.target.id === 'projectModal') closeProject();
+});
+document.getElementById('pdfModal').addEventListener('click', e=>{
+  if(e.target.id === 'pdfModal') closePdf();
+});
+
+updateActiveNav();
+/* ================================================
+   ⚙️ پنل تنظیمات زنده
+================================================ */
+const PRESETS = {
+  cyan:    {accent:'#22d3ee', accent2:'#a78bfa', accent3:'#34d399'},
+  purple:  {accent:'#a855f7', accent2:'#ec4899', accent3:'#8b5cf6'},
+  green:   {accent:'#10b981', accent2:'#34d399', accent3:'#06b6d4'},
+  orange:  {accent:'#f59e0b', accent2:'#ef4444', accent3:'#fb923c'},
+  blue:    {accent:'#3b82f6', accent2:'#06b6d4', accent3:'#6366f1'},
+  pink:    {accent:'#ec4899', accent2:'#f472b6', accent3:'#c084fc'},
+  red:     {accent:'#ef4444', accent2:'#f59e0b', accent3:'#ec4899'},
+  slate:   {accent:'#64748b', accent2:'#334155', accent3:'#94a3b8'}
+};
+
+function loadSettings(){
+  const saved = localStorage.getItem('resume_settings');
+  if(!saved) return;
+  try {
+    const s = JSON.parse(saved);
+    if(s.accent){
+      document.documentElement.style.setProperty('--accent', s.accent);
+      document.documentElement.style.setProperty('--accent2', s.accent2);
+      document.documentElement.style.setProperty('--accent3', s.accent3);
+      document.getElementById('pickAccent').value = s.accent;
+      document.getElementById('pickAccent2').value = s.accent2;
+      document.getElementById('pickAccent3').value = s.accent3;
+    }
+    if(s.fontFa) document.documentElement.style.setProperty('--font-fa', `'${s.fontFa}', sans-serif`);
+    if(s.fontEn) document.documentElement.style.setProperty('--font-en', `'${s.fontEn}', sans-serif`);
+    if(s.preset){
+      document.querySelectorAll('.color-preset').forEach(p=>{
+        p.classList.toggle('active', p.dataset.preset === s.preset);
+      });
+    }
+    if(s.fontFa){
+      document.querySelectorAll('.font-option').forEach(el=>{
+        const onclick = el.getAttribute('onclick') || '';
+        if(onclick.includes("setFont('fa'") && onclick.includes(s.fontFa)) el.classList.add('active');
+        else if(onclick.includes("setFont('fa'")) el.classList.remove('active');
+      });
+    }
+    if(s.fontEn){
+      document.querySelectorAll('.font-option').forEach(el=>{
+        const onclick = el.getAttribute('onclick') || '';
+        if(onclick.includes("setFont('en'") && onclick.includes(s.fontEn)) el.classList.add('active');
+        else if(onclick.includes("setFont('en'")) el.classList.remove('active');
+      });
+    }
+  } catch(e){ console.warn('Settings load error', e); }
+}
+
+function setPreset(name, el){
+  const p = PRESETS[name];
+  if(!p) return;
+  document.querySelectorAll('.stat-icon, .lang-dot, .brand-icon, .hero-tag i, .kicker i, .mark, .logo-mark').forEach((icon, idx)=>{
+    icon.style.transition = 'all .3s cubic-bezier(.4,0,.2,1)';
+    icon.style.transform = 'scale(1.3) rotate(15deg)';
+    setTimeout(()=>{ icon.style.transform = ''; }, 300 + idx * 20);
+  });
+  document.documentElement.style.setProperty('--accent', p.accent);
+  document.documentElement.style.setProperty('--accent2', p.accent2);
+  document.documentElement.style.setProperty('--accent3', p.accent3);
+  document.getElementById('pickAccent').value = p.accent;
+  document.getElementById('pickAccent2').value = p.accent2;
+  document.getElementById('pickAccent3').value = p.accent3;
+  document.querySelectorAll('.color-preset').forEach(x=>x.classList.remove('active'));
+  el.classList.add('active');
+  saveSettings(name);
+  showToast(lang === 'fa' ? '🎨 پالت اعمال شد' : '🎨 Preset applied');
+  showLivePreview();
+}
+
+function applyCustomColor(){
+  const a1 = document.getElementById('pickAccent').value;
+  const a2 = document.getElementById('pickAccent2').value;
+  const a3 = document.getElementById('pickAccent3').value;
+  document.documentElement.style.setProperty('--accent', a1);
+  document.documentElement.style.setProperty('--accent2', a2);
+  document.documentElement.style.setProperty('--accent3', a3);
+  document.querySelectorAll('.color-preset').forEach(x=>x.classList.remove('active'));
+  saveSettings(null);
+  showLivePreview();
+}
+
+function setFont(type, fontName, el){
+  if(type === 'fa') document.documentElement.style.setProperty('--font-fa', `'${fontName}', sans-serif`);
+  else document.documentElement.style.setProperty('--font-en', `'${fontName}', sans-serif`);
+  const siblings = el.parentElement.querySelectorAll('.font-option');
+  siblings.forEach(s=>s.classList.remove('active'));
+  el.classList.add('active');
+  saveSettings(null);
+  showToast(lang === 'fa' ? `✓ فونت ${fontName} اعمال شد` : `✓ Font ${fontName} applied`);
+  showLivePreview();
+}
+
+function saveSettings(presetName){
+  const current = JSON.parse(localStorage.getItem('resume_settings') || '{}');
+  const settings = {
+    accent: document.getElementById('pickAccent').value,
+    accent2: document.getElementById('pickAccent2').value,
+    accent3: document.getElementById('pickAccent3').value,
+    fontFa: getActiveFont('fa') || current.fontFa,
+    fontEn: getActiveFont('en') || current.fontEn,
+    preset: presetName || (document.querySelector('.color-preset.active')?.dataset.preset) || null
+  };
+  localStorage.setItem('resume_settings', JSON.stringify(settings));
+}
+
+function getActiveFont(type){
+  const active = document.querySelector(`.font-option.active[onclick*="setFont('${type}'"]`);
+  if(!active) return null;
+  const match = active.getAttribute('onclick').match(/setFont\('[^']+','([^']+)'/);
+  return match ? match[1] : null;
+}
+
+function resetSettings(){
+  if(!confirm(lang === 'fa' ? 'آیا مطمئن هستید؟' : 'Are you sure?')) return;
+  document.querySelectorAll('.stat-icon, .lang-dot, .brand-icon').forEach((icon, idx)=>{
+    icon.style.transition = 'all .3s';
+    icon.style.transform = 'rotate(360deg) scale(.7)';
+    setTimeout(()=>{ icon.style.transform = ''; }, 400 + idx * 20);
+  });
+  localStorage.removeItem('resume_settings');
+  ['--accent','--accent2','--accent3','--font-fa','--font-en'].forEach(v=>{
+    document.documentElement.style.removeProperty(v);
+  });
+  document.getElementById('pickAccent').value = '#22d3ee';
+  document.getElementById('pickAccent2').value = '#a78bfa';
+  document.getElementById('pickAccent3').value = '#34d399';
+  document.querySelectorAll('.color-preset').forEach(p=>{
+    p.classList.toggle('active', p.dataset.preset === 'cyan');
+  });
+  document.querySelectorAll('.font-option').forEach(f=>{
+    const onclick = f.getAttribute('onclick') || '';
+    const isDefault = onclick.includes("'JetBrains Mono'") || onclick.includes("'Vazirmatn'");
+    f.classList.toggle('active', isDefault);
+  });
+  showToast(lang === 'fa' ? '↺ تنظیمات بازنشانی شد' : '↺ Settings reset');
+  showLivePreview();
+}
+
+function toggleSettings(){
+  const panel = document.getElementById('settingsPanel');
+  const backdrop = document.getElementById('settingsBackdrop');
+  const toggle = document.getElementById('settingsToggle');
+  const isOpen = panel.classList.contains('open');
+  panel.classList.toggle('open');
+  backdrop.classList.toggle('show');
+  toggle.classList.toggle('active');
+  document.body.style.overflow = isOpen ? '' : 'hidden';
+  if(!isOpen) showLivePreview();
+}
+
+function closeAndSave(){
+  saveSettings(null);
+  toggleSettings();
+  showToast(lang === 'fa' ? '✓ تنظیمات ذخیره شد' : '✓ Settings saved');
+}
+
+let toastTimer;
+function showToast(msg){
+  const toast = document.getElementById('settingsToast');
+  document.getElementById('toastMsg').textContent = msg;
+  toast.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>toast.classList.remove('show'), 2500);
+}
+
+let hintTimer;
+function showLivePreview(){
+  const hint = document.getElementById('livePreviewHint');
+  hint.classList.add('show');
+  clearTimeout(hintTimer);
+  hintTimer = setTimeout(()=>hint.classList.remove('show'), 3000);
+}
+
+loadSettings();
+</script>
+<!-- ⚙️ پنل تنظیمات زنده -->
+<button id="settingsToggle" onclick="toggleSettings()" title="Settings" aria-label="تنظیمات">
+  <span class="pulse-ring"></span>
+  <i class="fas fa-sliders-h"></i>
+</button>
+
+<div id="settingsBackdrop" onclick="toggleSettings()"></div>
+
+<div class="live-preview-hint" id="livePreviewHint">
+  <span class="dot-live"></span>
+  <span data-fa>پیش‌نمایش زنده فعال است</span>
+  <span data-en>Live preview active</span>
+</div>
+
+<aside id="settingsPanel" role="dialog" aria-label="پنل تنظیمات">
+  <div class="settings-header">
+    <h3><i class="fas fa-sliders-h"></i><span data-fa>تنظیمات ظاهری</span><span data-en>Appearance</span></h3>
+    <button class="settings-close" onclick="toggleSettings()"><i class="fas fa-xmark"></i></button>
+  </div>
+
+  <div class="settings-body">
+
+    <div class="settings-group">
+      <div class="settings-group-title">
+        <i class="fas fa-swatchbook"></i>
+        <span data-fa>پالت آماده</span><span data-en>Presets</span>
+      </div>
+      <div class="color-presets">
+        <div class="color-preset active" data-preset="cyan" onclick="setPreset('cyan', this)"></div>
+        <div class="color-preset" data-preset="purple" onclick="setPreset('purple', this)"></div>
+        <div class="color-preset" data-preset="green" onclick="setPreset('green', this)"></div>
+        <div class="color-preset" data-preset="orange" onclick="setPreset('orange', this)"></div>
+        <div class="color-preset" data-preset="blue" onclick="setPreset('blue', this)"></div>
+        <div class="color-preset" data-preset="pink" onclick="setPreset('pink', this)"></div>
+        <div class="color-preset" data-preset="red" onclick="setPreset('red', this)"></div>
+        <div class="color-preset" data-preset="slate" onclick="setPreset('slate', this)"></div>
+      </div>
+    </div>
+
+    <div class="settings-group">
+      <div class="settings-group-title">
+        <i class="fas fa-palette"></i>
+        <span data-fa>رنگ‌های دلخواه</span><span data-en>Custom Colors</span>
+      </div>
+      <div class="color-picker-wrap">
+        <label><i class="fas fa-star"></i><span data-fa>رنگ اصلی</span><span data-en>Primary</span></label>
+        <input type="color" id="pickAccent" class="color-input" value="#22d3ee" oninput="applyCustomColor()">
+      </div>
+      <div class="color-picker-wrap">
+        <label><i class="fas fa-star-half-stroke"></i><span data-fa>رنگ دوم</span><span data-en>Secondary</span></label>
+        <input type="color" id="pickAccent2" class="color-input" value="#a78bfa" oninput="applyCustomColor()">
+      </div>
+      <div class="color-picker-wrap">
+        <label><i class="fas fa-star-of-life"></i><span data-fa>رنگ سوم</span><span data-en>Tertiary</span></label>
+        <input type="color" id="pickAccent3" class="color-input" value="#34d399" oninput="applyCustomColor()">
+      </div>
+    </div>
+
+    <div class="settings-group">
+      <div class="settings-group-title">
+        <i class="fas fa-font"></i>
+        <span data-fa>فونت فارسی</span><span data-en>Persian Font</span>
+      </div>
+      <div class="font-options">
+        <div class="font-option active" onclick="setFont('fa','Vazirmatn', this)">
+          <div class="font-preview" style="font-family:'Vazirmatn',sans-serif">آ ب پ</div>
+          <div class="font-name">Vazirmatn</div>
+        </div>
+        <div class="font-option" onclick="setFont('fa','Vazir', this)">
+          <div class="font-preview" style="font-family:'Vazir',sans-serif">آ ب پ</div>
+          <div class="font-name">Vazir</div>
+        </div>
+        <div class="font-option" onclick="setFont('fa','Sahel', this)">
+          <div class="font-preview" style="font-family:'Sahel',sans-serif">آ ب پ</div>
+          <div class="font-name">Sahel</div>
+        </div>
+        <div class="font-option" onclick="setFont('fa','Samim', this)">
+          <div class="font-preview" style="font-family:'Samim',sans-serif">آ ب پ</div>
+          <div class="font-name">Samim</div>
+        </div>
+        <div class="font-option" onclick="setFont('fa','Shabnam', this)">
+          <div class="font-preview" style="font-family:'Shabnam',sans-serif">آ ب پ</div>
+          <div class="font-name">Shabnam</div>
+        </div>
+        <div class="font-option" onclick="setFont('fa','Estedad', this)">
+          <div class="font-preview" style="font-family:'Estedad',sans-serif">آ ب پ</div>
+          <div class="font-name">Estedad</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="settings-group">
+      <div class="settings-group-title">
+        <i class="fas fa-font"></i>
+        <span data-fa>فونت انگلیسی</span><span data-en>English Font</span>
+      </div>
+      <div class="font-options">
+        <div class="font-option active" onclick="setFont('en','JetBrains Mono', this)">
+          <div class="font-preview" style="font-family:'JetBrains Mono',monospace">Aa</div>
+          <div class="font-name">JetBrains Mono</div>
+        </div>
+        <div class="font-option" onclick="setFont('en','Inter', this)">
+          <div class="font-preview" style="font-family:'Inter',sans-serif">Aa</div>
+          <div class="font-name">Inter</div>
+        </div>
+        <div class="font-option" onclick="setFont('en','Poppins', this)">
+          <div class="font-preview" style="font-family:'Poppins',sans-serif">Aa</div>
+          <div class="font-name">Poppins</div>
+        </div>
+        <div class="font-option" onclick="setFont('en','Roboto', this)">
+          <div class="font-preview" style="font-family:'Roboto',sans-serif">Aa</div>
+          <div class="font-name">Roboto</div>
+        </div>
+        <div class="font-option" onclick="setFont('en','Playfair Display', this)">
+          <div class="font-preview" style="font-family:'Playfair Display',serif">Aa</div>
+          <div class="font-name">Playfair</div>
+        </div>
+        <div class="font-option" onclick="setFont('en','Fira Code', this)">
+          <div class="font-preview" style="font-family:'Fira Code',monospace">Aa</div>
+          <div class="font-name">Fira Code</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="settings-actions">
+      <button class="settings-btn danger" onclick="resetSettings()">
+        <i class="fas fa-rotate-left"></i>
+        <span data-fa>بازنشانی</span><span data-en>Reset</span>
+      </button>
+      <button class="settings-btn primary" onclick="closeAndSave()">
+        <i class="fas fa-check"></i>
+        <span data-fa>ذخیره</span><span data-en>Save</span>
+      </button>
+    </div>
+
+  </div>
+</aside>
+
+<div id="settingsToast">
+  <i class="fas fa-check-circle"></i>
+  <span id="toastMsg">تنظیمات ذخیره شد</span>
+</div>
+</body>
+</html>

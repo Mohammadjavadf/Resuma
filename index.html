@@ -1,0 +1,1910 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مجموعه قالب‌های رزومه شخصی | ۶ قالب HTML دو زبانه — Resume Templates</title>
+<meta name="description" content="مجموعه‌ای از ۶ قالب HTML رزومه شخصی دو زبانه با طراحی متفاوت برای توسعه‌دهندگان، طراحان، فریلنسرها، مدیران و اساتید دانشگاه. با دارک مود، نمایشگر PDF و سئوی کامل.">
+<meta name="keywords" content="قالب رزومه, قالب HTML, رزومه شخصی, resume template, cv template, قالب فارسی, قالب دو زبانه">
+<meta name="author" content="Resume Templates">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://example.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="مجموعه قالب‌های رزومه شخصی دو زبانه">
+<meta property="og:description" content="۶ قالب HTML رزومه با طراحی متفاوت و پشتیبانی فارسی/انگلیسی">
+<meta property="og:image" content="https://example.com/og.jpg">
+<meta property="og:url" content="https://example.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="مجموعه قالب‌های رزومه شخصی">
+<meta name="twitter:description" content="۶ قالب HTML دو زبانه برای رزومه شخصی">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Resume Templates Collection",
+  "description": "۶ قالب HTML رزومه دو زبانه",
+  "numberOfItems": 6,
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Developer Resume","url":"https://example.com/demo-developer.html"},
+    {"@type":"ListItem","position":2,"name":"Designer Resume","url":"https://example.com/demo-designer.html"},
+    {"@type":"ListItem","position":3,"name":"Freelancer Resume","url":"https://example.com/demo-freelancer.html"},
+    {"@type":"ListItem","position":4,"name":"Corporate Resume","url":"https://example.com/demo-corporate.html"},
+    {"@type":"ListItem","position":5,"name":"Academic Resume","url":"https://example.com/demo-academic.html"},
+    {"@type":"ListItem","position":6,"name":"Minimal Resume","url":"https://example.com/demo-minimal.html"}
+  ]
+}
+</script>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Font Awesome 6 Free -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+:root[data-theme="dark"]{
+  --bg:#08060f;
+  --bg-2:#0f0a1a;
+  --panel:rgba(255,255,255,.04);
+  --panel-solid:#130d22;
+  --panel-2:rgba(255,255,255,.07);
+  --border:rgba(255,255,255,.08);
+  --border-hi:rgba(255,255,255,.18);
+  --text:#f5f0ff;
+  --muted:#a99bc9;
+  --muted-2:#6f6389;
+  --grad-1:#8b5cf6;
+  --grad-2:#ec4899;
+  --grad-3:#06b6d4;
+  --grad-4:#f59e0b;
+  --grad-5:#10b981;
+  --grad-6:#3b82f6;
+  --accent:#a78bfa;
+  --shadow:0 20px 60px rgba(139,92,246,.15);
+  --glow:0 0 60px rgba(139,92,246,.35);
+}
+:root[data-theme="light"]{
+  --bg:#faf8ff;
+  --bg-2:#f3ebff;
+  --panel:rgba(255,255,255,.75);
+  --panel-solid:#ffffff;
+  --panel-2:rgba(139,92,246,.05);
+  --border:rgba(139,92,246,.12);
+  --border-hi:rgba(139,92,246,.3);
+  --text:#1a0d2e;
+  --muted:#6b5b8a;
+  --muted-2:#9585b0;
+  --grad-1:#8b5cf6;
+  --grad-2:#ec4899;
+  --grad-3:#06b6d4;
+  --grad-4:#f59e0b;
+  --grad-5:#10b981;
+  --grad-6:#3b82f6;
+  --accent:#7c3aed;
+  --shadow:0 20px 60px rgba(139,92,246,.12);
+  --glow:0 0 60px rgba(139,92,246,.2);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Vazirmatn','Inter',sans-serif;
+  background:var(--bg); color:var(--text);
+  line-height:1.7; min-height:100vh;
+  transition:background .5s, color .5s;
+  overflow-x:hidden;
+  position:relative;
+}
+html[dir="ltr"] body{font-family:'Inter','Vazirmatn',sans-serif}
+h1,h2,h3,h4{font-weight:800; letter-spacing:-.03em; line-height:1.15}
+
+/* ============ BACKGROUND ============ */
+.bg-decor{
+  position:fixed; inset:0; z-index:-1; overflow:hidden;
+  pointer-events:none;
+}
+.bg-decor .orb{
+  position:absolute; border-radius:50%;
+  filter:blur(120px); opacity:.35;
+  animation:float 24s infinite ease-in-out;
+}
+.bg-decor .orb.o1{
+  width:700px; height:700px; top:-300px; right:-200px;
+  background:radial-gradient(circle, var(--grad-1), transparent 70%);
+}
+.bg-decor .orb.o2{
+  width:600px; height:600px; bottom:-200px; left:-200px;
+  background:radial-gradient(circle, var(--grad-2), transparent 70%);
+  animation-delay:-8s;
+}
+.bg-decor .orb.o3{
+  width:500px; height:500px; top:45%; left:35%;
+  background:radial-gradient(circle, var(--grad-3), transparent 70%);
+  animation-delay:-16s;
+  opacity:.15;
+}
+:root[data-theme="light"] .bg-decor .orb{opacity:.22}
+@keyframes float{
+  0%,100%{transform:translate(0,0) scale(1)}
+  33%{transform:translate(80px,-60px) scale(1.1)}
+  66%{transform:translate(-60px,40px) scale(.95)}
+}
+
+/* ============ SCROLL PROGRESS ============ */
+#scrollProgress{
+  position:fixed; top:0; left:0; height:3px; width:0%;
+  background:linear-gradient(90deg,var(--grad-1),var(--grad-2),var(--grad-3));
+  z-index:1001; transition:width .1s;
+  box-shadow:0 0 20px var(--grad-1);
+}
+
+/* ============ NAVBAR ============ */
+nav.navbar{
+  position:fixed; top:0; left:0; right:0; z-index:1000;
+  padding:16px 32px;
+  background:color-mix(in srgb, var(--bg) 65%, transparent);
+  backdrop-filter:blur(24px) saturate(180%);
+  -webkit-backdrop-filter:blur(24px) saturate(180%);
+  border-bottom:1px solid transparent;
+  transition:all .4s;
+}
+nav.navbar.scrolled{
+  border-bottom-color:var(--border);
+  padding:12px 32px;
+  box-shadow:0 8px 32px rgba(0,0,0,.08);
+}
+.nav-inner{
+  max-width:1300px; margin:0 auto;
+  display:flex; justify-content:space-between; align-items:center; gap:20px;
+}
+.nav-brand{
+  font-weight:900; font-size:1.05rem; cursor:pointer;
+  white-space:nowrap; letter-spacing:-.02em;
+  display:flex; align-items:center; gap:10px;
+}
+.nav-brand .brand-logo{
+  width:38px; height:38px; border-radius:11px;
+  background:linear-gradient(135deg,var(--grad-1),var(--grad-2),var(--grad-3));
+  display:flex; align-items:center; justify-content:center;
+  color:#fff; font-size:1rem;
+  box-shadow:0 6px 20px rgba(139,92,246,.4);
+  position:relative; overflow:hidden;
+}
+.nav-brand .brand-logo::before{
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(45deg, transparent 30%, rgba(255,255,255,.3), transparent 70%);
+  animation:shine 3s infinite;
+}
+@keyframes shine{
+  0%{transform:translateX(-100%)}
+  100%{transform:translateX(100%)}
+}
+.nav-brand .brand-name{
+  background:linear-gradient(135deg,var(--text),var(--accent));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.nav-links{display:flex; gap:4px; list-style:none; align-items:center}
+.nav-links a{
+  color:var(--muted); text-decoration:none; font-size:.88rem;
+  padding:8px 16px; border-radius:10px;
+  transition:all .25s; white-space:nowrap; font-weight:500;
+  position:relative;
+  display:flex; align-items:center; gap:8px;
+}
+.nav-links a i{font-size:.82rem; opacity:.7; transition:opacity .25s}
+.nav-links a:hover{color:var(--text); background:var(--panel-2)}
+.nav-links a:hover i{opacity:1}
+.nav-links a.active{color:var(--text); background:var(--panel-2)}
+.nav-links a.active i{opacity:1; color:var(--accent)}
+.nav-links a.active::before{
+  content:''; position:absolute; bottom:2px; left:50%; transform:translateX(-50%);
+  width:4px; height:4px; border-radius:50%;
+  background:linear-gradient(135deg,var(--grad-1),var(--grad-2));
+  box-shadow:0 0 8px var(--grad-1);
+}
+.nav-actions{display:flex; gap:8px; align-items:center}
+.ctrl-btn{
+  width:40px; height:40px; border-radius:12px;
+  background:var(--panel); border:1px solid var(--border);
+  color:var(--text); cursor:pointer; font-size:1rem;
+  display:flex; align-items:center; justify-content:center;
+  transition:all .3s; backdrop-filter:blur(10px);
+}
+.ctrl-btn:hover{
+  background:linear-gradient(135deg,var(--grad-1),var(--grad-2));
+  color:#fff; border-color:transparent;
+  transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(139,92,246,.4);
+}
+.ctrl-btn.lang{width:auto; padding:0 14px; font-size:.78rem; font-weight:700}
+.hamburger{
+  display:none; width:40px; height:40px; border-radius:12px;
+  background:var(--panel); border:1px solid var(--border);
+  cursor:pointer; align-items:center; justify-content:center;
+  padding:0; backdrop-filter:blur(10px);
+  color:var(--text); font-size:1rem;
+}
+.mobile-menu{
+  position:fixed; top:70px; left:16px; right:16px; z-index:999;
+  background:color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter:blur(24px);
+  border:1px solid var(--border);
+  border-radius:20px;
+  transform:translateY(-140%); transition:transform .4s cubic-bezier(.4,0,.2,1);
+  padding:12px;
+  box-shadow:0 20px 60px rgba(0,0,0,.3);
+}
+.mobile-menu.open{transform:translateY(0)}
+.mobile-menu a{
+  display:flex; align-items:center; gap:12px;
+  padding:14px 18px; color:var(--text);
+  text-decoration:none; border-radius:12px;
+  transition:all .2s; font-size:.95rem; font-weight:500;
+}
+.mobile-menu a i{
+  width:20px; text-align:center; color:var(--muted);
+  transition:color .2s;
+}
+.mobile-menu a:hover,.mobile-menu a.active{
+  background:linear-gradient(135deg,var(--grad-1),var(--grad-2));
+  color:#fff;
+}
+.mobile-menu a:hover i,.mobile-menu a.active i{color:#fff}
+@media(max-width:950px){.nav-links{display:none} .hamburger{display:flex}}
+@media(min-width:951px){.mobile-menu{display:none}}
+
+/* ============ HERO ============ */
+header.hero{
+  min-height:100vh; padding:150px 32px 80px;
+  max-width:1300px; margin:0 auto;
+  display:flex; flex-direction:column; justify-content:center;
+  text-align:center; position:relative;
+}
+.hero .eyebrow{
+  display:inline-flex; align-items:center; gap:12px;
+  color:var(--muted); font-size:.82rem; font-weight:500;
+  letter-spacing:.08em; text-transform:uppercase;
+  margin:0 auto 32px;
+  padding:8px 18px; border-radius:30px;
+  background:var(--panel); border:1px solid var(--border);
+  backdrop-filter:blur(10px);
+  width:fit-content;
+  animation:fadeInUp .8s ease;
+}
+.hero .eyebrow .pulse{
+  width:8px; height:8px; border-radius:50%;
+  background:linear-gradient(135deg,var(--grad-1),var(--grad-2));
+  box-shadow:0 0 12px var(--grad-1);
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{
+  0%,100%{transform:scale(1); opacity:1}
+  50%{transform:scale(1.3); opacity:.7}
+}
+@keyframes fadeInUp{
+  from{opacity:0; transform:translateY(30px)}
+  to{opacity:1; transform:translateY(0)}
+}
+.hero h1{
+  font-size:clamp(2.6rem, 7vw, 5rem); font-weight:900;
+  margin:0 auto 28px; line-height:1.05;
+  letter-spacing:-.04em; max-width:1000px;
+  animation:fadeInUp .8s ease .1s backwards;
+}
+.hero h1 .grad{
+  background:linear-gradient(135deg,var(--grad-1) 0%, var(--grad-2) 40%, var(--grad-3) 80%, var(--grad-4) 100%);
+  background-size:300% 300%;
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  animation:gradShift 8s ease infinite;
+}
+@keyframes gradShift{
+  0%,100%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+}
+.hero p.lead{
+  color:var(--muted); font-size:1.15rem; max-width:700px;
+  margin:0 auto 44px; line-height:1.85;
+  animation:fadeInUp .8s ease .2s backwards;
+}
+.hero .cta{
+  display:flex; gap:14px; flex-wrap:wrap; justify-content:center;
+  margin-bottom:56px;
+  animation:fadeInUp .8s ease .3s backwards;
+}
+.btn{
+  padding:16px 32px; border-radius:14px; border:1px solid var(--border);
+  font-family:inherit; font-size:.92rem; font-weight:700;
+  cursor:pointer; text-decoration:none; display:inline-flex;
+  align-items:center; gap:10px; transition:all .3s;
+  background:var(--panel); color:var(--text);
+  backdrop-filter:blur(10px);
+  position:relative; overflow:hidden;
+}
+.btn i{font-size:.9em}
+.btn-primary{
+  background:linear-gradient(135deg,var(--grad-1),var(--grad-2));
+  color:#fff; border-color:transparent;
+  box-shadow:0 10px 30px rgba(139,92,246,.35);
+}
+.btn-primary:hover{
+  transform:translateY(-3px);
+  box-shadow:0 15px 40px rgba(236,72,153,.45);
+}
+.btn-ghost:hover{
+  background:var(--panel-2); border-color:var(--border-hi);
+  transform:translateY(-3px);
+}
+
+.hero .badges{
+  display:flex; gap:10px; justify-content:center; flex-wrap:wrap;
+  animation:fadeInUp .8s ease .4s backwards;
+}
+.hero .badges .badge{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:8px 16px; border-radius:30px;
+  background:var(--panel); border:1px solid var(--border);
+  backdrop-filter:blur(10px);
+  font-size:.82rem; color:var(--muted); font-weight:600;
+}
+.hero .badges .badge i{color:var(--accent); font-size:.9rem}
+
+/* ============ SECTION ============ */
+section{max-width:1300px; margin:0 auto; padding:100px 32px; scroll-margin-top:80px}
+.section-head{margin-bottom:56px; text-align:center}
+.section-head .kicker{
+  display:inline-flex; align-items:center; gap:10px;
+  color:var(--muted); font-size:.78rem;
+  font-weight:600; letter-spacing:.15em; text-transform:uppercase;
+  margin-bottom:16px;
+  padding:6px 14px; border-radius:30px;
+  background:var(--panel); border:1px solid var(--border);
+}
+.section-head .kicker i{color:var(--accent); font-size:.85rem}
+.section-head h2{
+  font-size:clamp(2rem, 5vw, 3rem); font-weight:900;
+  letter-spacing:-.04em; line-height:1.1;
+  margin-bottom:16px;
+}
+.section-head h2 .grad{
+  background:linear-gradient(135deg,var(--grad-1),var(--grad-2));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.section-head .sub{color:var(--muted); font-size:1.02rem; max-width:640px; margin:0 auto}
+
+/* ============ TOOLBAR ============ */
+.toolbar{
+  display:flex; gap:12px; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; margin-bottom:32px;
+  padding:16px 20px; border-radius:20px;
+  background:var(--panel); border:1px solid var(--border);
+  backdrop-filter:blur(20px);
+}
+.toolbar .search-wrap{
+  position:relative; flex:1; min-width:240px;
+}
+.toolbar .search-wrap input{
+  width:100%; padding:12px 44px 12px 16px;
+  border-radius:12px;
+  background:var(--bg); border:1px solid var(--border);
+  color:var(--text); font-family:inherit; font-size:.9rem;
+  transition:all .3s;
+}
+html[dir="ltr"] .toolbar .search-wrap input{padding:12px 16px 12px 44px}
+.toolbar .search-wrap input:focus{
+  outline:none;
+  border-color:transparent;
+  background:
+    linear-gradient(var(--bg),var(--bg)) padding-box,
+    linear-gradient(135deg,var(--grad-1),var(--grad-2)) border-box;
+  box-shadow:0 0 0 4px color-mix(in srgb, var(--grad-1) 12%, transparent);
+}
+.toolbar .search-wrap .search-ic{
+  position:absolute; top:50%; right:16px; transform:translateY(-50%);
+  color:var(--muted); pointer-events:none;
+}
+html[dir="ltr"] .toolbar .search-wrap .search-ic{right:auto; left:16px}
+.toolbar .filters{
+  display:flex; gap:6px; flex-wrap:wrap;
+}
+.chip{
+  padding:8px 16px; border-radius:20px;
+  background:transparent; border:1px solid var(--border);
+  color:var(--muted); cursor:pointer; font-family:inherit;
+  font-size:.82rem; font-weight:600; transition:all .3s;
+  display:inline-flex; align-items:center; gap:6px;
+}
+.chip i{font-size:.75rem}
+.chip:hover{color:var(--text); border-color:var(--border-hi)}
+.chip.active{
+  background:linear-gradient(135deg,var(--grad-1),var(--grad-2));
+  color:#fff; border-color:transparent;
+  box-shadow:0 6px 20px rgba(139,92,246,.35);
+}
+.toolbar .count{
+  color:var(--muted); font-size:.82rem;
+  padding:0 8px; font-weight:600; white-space:nowrap;
+  display:flex; align-items:center; gap:6px;
+}
+.toolbar .count i{color:var(--accent)}
+.toolbar .count strong{color:var(--text)}
+
+/* ============ GRID ============ */
+.grid{
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr));
+  gap:24px;
+}
+.card{
+  background:var(--panel-solid); border:1px solid var(--border);
+  border-radius:24px; overflow:hidden;
+  transition:all .4s cubic-bezier(.4,0,.2,1);
+  display:flex; flex-direction:column;
+  position:relative;
+  animation:cardIn .5s ease backwards;
+}
+@keyframes cardIn{
+  from{opacity:0; transform:translateY(20px)}
+  to{opacity:1; transform:translateY(0)}
+}
+.card.hide{display:none}
+.card::before{
+  content:''; position:absolute; inset:0; border-radius:24px;
+  padding:1px;
+  background:linear-gradient(135deg, var(--card-grad-1), var(--card-grad-2));
+  -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor; mask-composite:exclude;
+  opacity:0; transition:opacity .4s;
+  pointer-events:none;
+}
+.card:hover::before{opacity:1}
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 30px 60px rgba(0,0,0,.2), 0 0 60px color-mix(in srgb, var(--card-grad-1) 25%, transparent);
+}
+
+/* Card Preview */
+.card .preview{
+  height:220px; position:relative;
+  display:flex; align-items:center; justify-content:center;
+  overflow:hidden;
+  background:linear-gradient(135deg, var(--card-grad-1), var(--card-grad-2));
+}
+.card .preview::before{
+  content:''; position:absolute; inset:0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,.25), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,.15), transparent 40%);
+  z-index:1;
+}
+.card .preview::after{
+  content:''; position:absolute; inset:0;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(255,255,255,.03) 10px,
+      rgba(255,255,255,.03) 20px
+    );
+  z-index:1;
+}
+.card .preview .mock{
+  position:relative; z-index:2;
+  width:82%; height:78%;
+  background:rgba(255,255,255,.95);
+  border-radius:12px 12px 0 0;
+  padding:16px 14px;
+  display:flex; flex-direction:column; gap:8px;
+  box-shadow:0 20px 40px rgba(0,0,0,.25);
+  transform:translateY(8px);
+  transition:transform .4s;
+}
+.card:hover .preview .mock{transform:translateY(0)}
+.card .preview .mock .bar{
+  height:6px; border-radius:3px;
+  background:linear-gradient(90deg, var(--card-grad-1), var(--card-grad-2));
+}
+.card .preview .mock .bar.w-60{width:60%}
+.card .preview .mock .bar.w-40{width:40%}
+.card .preview .mock .bar.w-80{width:80%}
+.card .preview .mock .bar.w-90{width:90%}
+.card .preview .mock .bar.light{background:#e5e7eb}
+.card .preview .mock .bar.light.w-30{width:30%}
+.card .preview .mock .bar.light.w-50{width:50%}
+.card .preview .mock .bar.light.w-60{width:60%}
+.card .preview .mock .bar.light.w-70{width:70%}
+.card .preview .mock .bar.light.w-90{width:90%}
+.card .preview .mock .row{
+  display:flex; gap:6px; margin-top:auto;
+}
+.card .preview .mock .row .box{
+  flex:1; height:32px; border-radius:6px;
+  background:#f3f4f6;
+}
+.card .preview .mock .row .box.g{
+  background:linear-gradient(135deg, var(--card-grad-1), var(--card-grad-2));
+  opacity:.85;
+}
+.card .preview .icon-badge{
+  position:absolute; top:16px; right:16px; z-index:3;
+  width:46px; height:46px; border-radius:12px;
+  background:rgba(255,255,255,.95);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.3rem;
+  color:var(--card-grad-1);
+  box-shadow:0 8px 20px rgba(0,0,0,.2);
+}
+html[dir="rtl"] .card .preview .icon-badge{right:auto; left:16px}
+.card .preview .label-badge{
+  position:absolute; bottom:16px; left:16px; z-index:3;
+  padding:5px 12px; border-radius:20px;
+  background:rgba(0,0,0,.55); backdrop-filter:blur(10px);
+  color:#fff; font-size:.72rem; font-weight:700;
+  display:flex; align-items:center; gap:6px;
+}
+html[dir="rtl"] .card .preview .label-badge{left:auto; right:16px}
+.card .preview .label-badge .dot{
+  width:6px; height:6px; border-radius:50%; background:#10b981;
+  box-shadow:0 0 6px #10b981;
+}
+.card .preview .label-badge i{font-size:.7rem}
+
+/* Card Body */
+.card .body{padding:22px; flex:1; display:flex; flex-direction:column}
+.card .body h3{
+  font-size:1.15rem; font-weight:800; margin-bottom:6px;
+  letter-spacing:-.02em;
+}
+.card .body .desc{
+  color:var(--muted); font-size:.88rem; line-height:1.7;
+  flex:1; margin-bottom:16px;
+}
+.card .body .tags{
+  display:flex; gap:6px; flex-wrap:wrap; margin-bottom:18px;
+}
+.card .body .tags span{
+  padding:4px 10px; border-radius:8px;
+  background:var(--panel-2); border:1px solid var(--border);
+  color:var(--muted); font-size:.72rem; font-weight:600;
+}
+.card .body .actions{display:flex; gap:8px; margin-top:auto}
+.card .body .actions a{
+  flex:1; padding:11px; border-radius:10px; text-align:center;
+  text-decoration:none; font-size:.85rem; font-weight:700;
+  transition:all .3s;
+  display:inline-flex; align-items:center; justify-content:center; gap:6px;
+  border:1px solid transparent;
+}
+.card .body .actions .btn-primary{
+  background:linear-gradient(135deg,var(--card-grad-1),var(--card-grad-2));
+  color:#fff;
+  box-shadow:0 6px 20px color-mix(in srgb, var(--card-grad-1) 35%, transparent);
+}
+.card .body .actions .btn-primary:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 25px color-mix(in srgb, var(--card-grad-1) 50%, transparent);
+}
+.card .body .actions .btn-ghost{
+  background:transparent; color:var(--text);
+  border-color:var(--border);
+}
+.card .body .actions .btn-ghost:hover{
+  background:var(--panel-2); border-color:var(--border-hi);
+}
+
+/* Card color variants */
+.card[data-color="developer"]{
+  --card-grad-1:#22d3ee; --card-grad-2:#a78bfa;
+}
+.card[data-color="designer"]{
+  --card-grad-1:#db61a2; --card-grad-2:#a371f7;
+}
+.card[data-color="freelancer"]{
+  --card-grad-1:#10b981; --card-grad-2:#fbbf24;
+}
+.card[data-color="corporate"]{
+  --card-grad-1:#3b82f6; --card-grad-2:#6366f1;
+}
+.card[data-color="academic"]{
+  --card-grad-1:#a371f7; --card-grad-2:#06b6d4;
+}
+.card[data-color="minimal"]{
+  --card-grad-1:#8b5cf6; --card-grad-2:#ec4899;
+}
+
+/* ============ EMPTY STATE ============ */
+.empty{
+  grid-column:1/-1; padding:80px 20px; text-align:center;
+  color:var(--muted); display:none;
+}
+.empty.show{display:block}
+.empty .ic{
+  font-size:3.5rem; margin-bottom:20px; opacity:.4;
+  color:var(--accent);
+}
+.empty h3{color:var(--text); margin-bottom:8px; font-size:1.3rem}
+.empty p{font-size:.95rem}
+
+/* ============ FEATURES ============ */
+.features-grid{
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:20px;
+}
+.feature{
+  padding:28px; border-radius:20px;
+  background:var(--panel); border:1px solid var(--border);
+  backdrop-filter:blur(20px);
+  transition:all .4s;
+  position:relative; overflow:hidden;
+}
+.feature::before{
+  content:''; position:absolute; top:0; right:0; bottom:0;
+  width:3px;
+  background:linear-gradient(180deg,var(--feat-grad-1),var(--feat-grad-2));
+  transform:scaleY(0); transform-origin:top;
+  transition:transform .4s;
+}
+html[dir="ltr"] .feature::before{right:auto; left:0}
+.feature:hover::before{transform:scaleY(1)}
+.feature:hover{
+  transform:translateY(-6px);
+  border-color:var(--border-hi);
+  box-shadow:var(--shadow);
+}
+.feature .ic{
+  width:56px; height:56px; border-radius:14px;
+  background:linear-gradient(135deg,var(--feat-grad-1),var(--feat-grad-2));
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.5rem; color:#fff; margin-bottom:18px;
+  box-shadow:0 10px 24px color-mix(in srgb, var(--feat-grad-1) 35%, transparent);
+}
+.feature h4{font-size:1.05rem; font-weight:800; margin-bottom:8px}
+.feature p{color:var(--muted); font-size:.88rem; line-height:1.7}
+
+/* Feature colors */
+.feature:nth-child(1){--feat-grad-1:#8b5cf6; --feat-grad-2:#ec4899}
+.feature:nth-child(2){--feat-grad-1:#06b6d4; --feat-grad-2:#3b82f6}
+.feature:nth-child(3){--feat-grad-1:#10b981; --feat-grad-2:#06b6d4}
+.feature:nth-child(4){--feat-grad-1:#f59e0b; --feat-grad-2:#ec4899}
+.feature:nth-child(5){--feat-grad-1:#a371f7; --feat-grad-2:#3b82f6}
+.feature:nth-child(6){--feat-grad-1:#ec4899; --feat-grad-2:#f59e0b}
+.feature:nth-child(7){--feat-grad-1:#3b82f6; --feat-grad-2:#8b5cf6}
+.feature:nth-child(8){--feat-grad-1:#06b6d4; --feat-grad-2:#10b981}
+.feature:nth-child(9){--feat-grad-1:#f59e0b; --feat-grad-2:#ef4444}
+.feature:nth-child(10){--feat-grad-1:#ec4899; --feat-grad-2:#8b5cf6}
+
+/* ============ COMPARE TABLE ============ */
+.compare-wrap{
+  overflow-x:auto; border-radius:20px;
+  border:1px solid var(--border);
+  background:var(--panel);
+  backdrop-filter:blur(20px);
+}
+.compare-table{
+  width:100%; min-width:800px;
+  border-collapse:separate; border-spacing:0;
+}
+.compare-table th, .compare-table td{
+  padding:18px 20px; text-align:center;
+  border-bottom:1px solid var(--border);
+  font-size:.88rem;
+}
+.compare-table th{
+  background:var(--panel-2); color:var(--muted);
+  font-weight:700; font-size:.8rem;
+  text-transform:uppercase; letter-spacing:1px;
+  position:sticky; top:0;
+}
+.compare-table th i{display:block; font-size:1rem; color:var(--accent); margin-bottom:4px}
+.compare-table td:first-child{
+  text-align:right; font-weight:600;
+  color:var(--text);
+  background:var(--panel-2);
+  position:sticky; right:0;
+  z-index:1;
+}
+html[dir="ltr"] .compare-table td:first-child{text-align:left; right:auto; left:0}
+.compare-table td:first-child i{
+  color:var(--accent); margin-left:8px; font-size:.8rem;
+}
+html[dir="ltr"] .compare-table td:first-child i{margin-left:0; margin-right:8px}
+.compare-table tr:last-child td{border-bottom:none}
+.compare-table tr:hover td{background:color-mix(in srgb, var(--grad-1) 4%, transparent)}
+.compare-table .yes{
+  color:#10b981; font-weight:900; font-size:1.1rem;
+}
+.compare-table .no{
+  color:var(--muted-2); opacity:.4;
+}
+
+/* ============ HOW TO USE ============ */
+.steps{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px; counter-reset:step;
+}
+.step{
+  padding:32px 26px; border-radius:20px;
+  background:var(--panel); border:1px solid var(--border);
+  backdrop-filter:blur(20px);
+  position:relative; counter-increment:step;
+  transition:all .3s;
+}
+.step:hover{transform:translateY(-4px); border-color:var(--border-hi)}
+.step::before{
+  content:counter(step, decimal-leading-zero);
+  position:absolute; top:-14px; right:24px;
+  width:44px; height:44px; border-radius:12px;
+  background:linear-gradient(135deg,var(--grad-1),var(--grad-2));
+  color:#fff; display:flex; align-items:center; justify-content:center;
+  font-weight:900; font-size:1rem;
+  box-shadow:0 8px 20px rgba(139,92,246,.4);
+}
+html[dir="ltr"] .step::before{right:auto; left:24px}
+.step .step-icon{
+  width:44px; height:44px; border-radius:12px;
+  background:color-mix(in srgb, var(--accent) 12%, transparent);
+  color:var(--accent);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.2rem; margin-bottom:14px; margin-top:6px;
+}
+.step h4{font-size:1.05rem; margin-bottom:10px; font-weight:800}
+.step p{color:var(--muted); font-size:.88rem; line-height:1.7}
+
+/* ============ FAQ ============ */
+.faq{max-width:840px; margin:0 auto; display:flex; flex-direction:column; gap:12px}
+.faq-item{
+  background:var(--panel); border:1px solid var(--border);
+  border-radius:16px; overflow:hidden;
+  backdrop-filter:blur(20px);
+  transition:all .3s;
+}
+.faq-item.open{border-color:var(--border-hi); box-shadow:var(--shadow)}
+.faq-q{
+  padding:20px 24px; cursor:pointer;
+  display:flex; justify-content:space-between; align-items:center; gap:16px;
+  font-weight:700; font-size:.98rem;
+  transition:color .3s;
+}
+.faq-q:hover{color:var(--accent)}
+.faq-q i.faq-icon{
+  color:var(--accent); margin-left:10px;
+}
+html[dir="ltr"] .faq-q i.faq-icon{margin-left:0; margin-right:10px}
+.faq-q .ic{
+  width:28px; height:28px; border-radius:50%;
+  background:var(--panel-2); border:1px solid var(--border);
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0; transition:all .3s; font-weight:900;
+  color:var(--accent); font-size:.85rem;
+}
+.faq-item.open .faq-q .ic{
+  transform:rotate(45deg);
+  background:linear-gradient(135deg,var(--grad-1),var(--grad-2));
+  color:#fff; border-color:transparent;
+}
+.faq-a{
+  max-height:0; overflow:hidden;
+  transition:max-height .4s ease, padding .3s ease;
+  color:var(--muted); font-size:.9rem; line-height:1.85;
+  padding:0 24px;
+}
+.faq-item.open .faq-a{
+  max-height:400px; padding:0 24px 24px;
+}
+
+/* ============ CTA BANNER ============ */
+.cta-banner{
+  padding:60px 40px; border-radius:28px;
+  background:linear-gradient(135deg,var(--grad-1),var(--grad-2),var(--grad-3));
+  background-size:200% 200%;
+  animation:gradShift 8s ease infinite;
+  text-align:center; color:#fff;
+  position:relative; overflow:hidden;
+  box-shadow:0 30px 60px rgba(139,92,246,.35);
+}
+.cta-banner::before{
+  content:''; position:absolute; inset:0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,.15), transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,.1), transparent 50%);
+}
+.cta-banner > *{position:relative; z-index:1}
+.cta-banner h2{
+  font-size:clamp(1.7rem, 4vw, 2.5rem); font-weight:900;
+  margin-bottom:16px; letter-spacing:-.03em;
+}
+.cta-banner p{
+  font-size:1.05rem; margin-bottom:32px; opacity:.95;
+  max-width:600px; margin-left:auto; margin-right:auto;
+}
+.cta-banner .btn{
+  background:#fff; color:var(--grad-1); border-color:transparent;
+  padding:16px 36px; font-size:.95rem;
+}
+.cta-banner .btn:hover{
+  transform:translateY(-3px) scale(1.02);
+  box-shadow:0 15px 40px rgba(0,0,0,.3);
+}
+
+/* ============ FOOTER ============ */
+footer{
+  border-top:1px solid var(--border);
+  padding:60px 32px 40px;
+  background:color-mix(in srgb, var(--bg-2) 50%, transparent);
+}
+.footer-inner{
+  max-width:1300px; margin:0 auto;
+  display:grid; grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:40px;
+}
+@media(max-width:800px){
+  .footer-inner{grid-template-columns:1fr 1fr}
+}
+@media(max-width:520px){
+  .footer-inner{grid-template-columns:1fr}
+}
+.footer-col h4{
+  font-size:.85rem; text-transform:uppercase;
+  letter-spacing:1px; color:var(--muted);
+  margin-bottom:18px; font-weight:700;
+  display:flex; align-items:center; gap:8px;
+}
+.footer-col h4 i{color:var(--accent)}
+.footer-col p{
+  color:var(--muted); font-size:.88rem; line-height:1.8;
+  margin-bottom:16px;
+}
+.footer-col ul{list-style:none; display:flex; flex-direction:column; gap:10px}
+.footer-col ul a{
+  color:var(--muted); text-decoration:none; font-size:.88rem;
+  transition:all .3s; display:inline-flex; align-items:center; gap:8px;
+}
+.footer-col ul a i{font-size:.75rem; color:var(--accent); opacity:.7}
+.footer-col ul a:hover{color:var(--accent); transform:translateX(-4px)}
+html[dir="ltr"] .footer-col ul a:hover{transform:translateX(4px)}
+.footer-col ul a:hover i{opacity:1}
+
+.footer-bottom{
+  max-width:1300px; margin:40px auto 0;
+  padding-top:30px; border-top:1px solid var(--border);
+  display:flex; justify-content:space-between; align-items:center;
+  gap:20px; flex-wrap:wrap;
+  color:var(--muted); font-size:.82rem;
+}
+.footer-social{display:flex; gap:8px}
+.footer-social a{
+  width:40px; height:40px; border-radius:12px;
+  background:var(--panel); border:1px solid var(--border);
+  color:var(--muted); display:flex; align-items:center; justify-content:center;
+  text-decoration:none; transition:all .3s; font-size:1rem;
+}
+.footer-social a:hover{
+  background:linear-gradient(135deg,var(--grad-1),var(--grad-2));
+  color:#fff; border-color:transparent;
+  transform:translateY(-3px);
+}
+
+/* ============ BACK TO TOP ============ */
+#backTop{
+  position:fixed; bottom:24px; right:24px; z-index:900;
+  width:52px; height:52px; border-radius:16px;
+  background:linear-gradient(135deg,var(--grad-1),var(--grad-2));
+  color:#fff; border:none;
+  cursor:pointer; font-size:1.1rem;
+  box-shadow:0 12px 30px rgba(139,92,246,.45);
+  opacity:0; pointer-events:none; transition:all .4s;
+  display:flex; align-items:center; justify-content:center;
+}
+html[dir="rtl"] #backTop{right:auto; left:24px}
+#backTop.show{opacity:1; pointer-events:auto}
+#backTop:hover{transform:translateY(-4px) scale(1.05)}
+
+/* ============ ANIMATIONS ============ */
+.reveal{opacity:0; transform:translateY(30px); transition:all .8s cubic-bezier(.4,0,.2,1)}
+.reveal.visible{opacity:1; transform:translateY(0)}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:720px){
+  .section-head h2{font-size:1.8rem}
+  section{padding:70px 20px}
+  header.hero{padding:130px 20px 60px}
+  .hero h1{font-size:2.4rem}
+  .toolbar{flex-direction:column; align-items:stretch}
+  .toolbar .filters{justify-content:center}
+  .toolbar .count{text-align:center; justify-content:center}
+  .cta-banner{padding:44px 24px}
+}
+
+@media print{
+  .bg-decor,nav.navbar,.mobile-menu,#backTop,#scrollProgress,.hamburger,
+  .toolbar,.cta-banner{display:none !important}
+  body{background:#fff; color:#000}
+  .reveal{opacity:1 !important; transform:none !important}
+}
+</style>
+</head>
+<body>
+
+<!-- Background -->
+<div class="bg-decor">
+  <div class="orb o1"></div>
+  <div class="orb o2"></div>
+  <div class="orb o3"></div>
+</div>
+
+<div id="scrollProgress"></div>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <div class="nav-brand" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+      <div class="brand-logo"><i class="fas fa-file-lines"></i></div>
+      <span class="brand-name" data-fa>قالب‌های رزومه</span>
+      <span class="brand-name" data-en>Resume Templates</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="#home" class="active">
+          <i class="fas fa-house"></i>
+          <span data-fa>خانه</span><span data-en>Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="#templates">
+          <i class="fas fa-th-large"></i>
+          <span data-fa>قالب‌ها</span><span data-en>Templates</span>
+        </a>
+      </li>
+      <li>
+        <a href="#features">
+          <i class="fas fa-star"></i>
+          <span data-fa>ویژگی‌ها</span><span data-en>Features</span>
+        </a>
+      </li>
+      <li>
+        <a href="#compare">
+          <i class="fas fa-scale-balanced"></i>
+          <span data-fa>مقایسه</span><span data-en>Compare</span>
+        </a>
+      </li>
+      <li>
+        <a href="#faq">
+          <i class="fas fa-circle-question"></i>
+          <span data-fa>سوالات</span><span data-en>FAQ</span>
+        </a>
+      </li>
+    </ul>
+    <div class="nav-actions">
+      <button class="ctrl-btn lang" onclick="toggleLang()">
+        <span data-fa>EN</span><span data-en>فا</span>
+      </button>
+      <button class="ctrl-btn" onclick="toggleTheme()" id="themeBtn">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="hamburger" onclick="toggleMenu()" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home" onclick="closeMenu()"><i class="fas fa-house"></i><span data-fa>خانه</span><span data-en>Home</span></a>
+  <a href="#templates" onclick="closeMenu()"><i class="fas fa-th-large"></i><span data-fa>قالب‌ها</span><span data-en>Templates</span></a>
+  <a href="#features" onclick="closeMenu()"><i class="fas fa-star"></i><span data-fa>ویژگی‌ها</span><span data-en>Features</span></a>
+  <a href="#compare" onclick="closeMenu()"><i class="fas fa-scale-balanced"></i><span data-fa>مقایسه</span><span data-en>Compare</span></a>
+  <a href="#how" onclick="closeMenu()"><i class="fas fa-circle-play"></i><span data-fa>راهنما</span><span data-en>How to Use</span></a>
+  <a href="#faq" onclick="closeMenu()"><i class="fas fa-circle-question"></i><span data-fa>سوالات</span><span data-en>FAQ</span></a>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="home">
+  <span class="eyebrow">
+    <span class="pulse"></span>
+    <i class="fas fa-gift"></i>
+    <span data-fa>۶ قالب حرفه‌ای — کاملاً رایگان</span>
+    <span data-en>6 Professional Templates — 100% Free</span>
+  </span>
+  <h1>
+    <span data-fa>مجموعه <span class="grad">قالب‌های رزومه</span> شخصی</span>
+    <span data-en>Personal <span class="grad">Resume Templates</span> Collection</span>
+  </h1>
+  <p class="lead" data-fa>۶ قالب HTML دو زبانه با طراحی متفاوت برای توسعه‌دهندگان، طراحان، فریلنسرها، مدیران، اساتید و افراد مینیمال‌پسند. هر قالب در یک فایل مستقل با تمام قابلیت‌ها.</p>
+  <p class="lead" data-en>6 bilingual HTML templates with unique designs for developers, designers, freelancers, executives, academics and minimalists. Each in a single file with all features.</p>
+  <div class="cta">
+    <a href="#templates" class="btn btn-primary">
+      <i class="fas fa-th-large"></i>
+      <span data-fa>مشاهده قالب‌ها</span>
+      <span data-en>Browse Templates</span>
+    </a>
+    <a href="#features" class="btn btn-ghost">
+      <i class="fas fa-star"></i>
+      <span data-fa>ویژگی‌ها</span>
+      <span data-en>Features</span>
+    </a>
+  </div>
+  <div class="badges">
+    <span class="badge"><i class="fas fa-check-circle"></i><span data-fa>واکنش‌گرا</span><span data-en>Responsive</span></span>
+    <span class="badge"><i class="fas fa-globe"></i><span data-fa>دو زبانه</span><span data-en>Bilingual</span></span>
+    <span class="badge"><i class="fas fa-moon"></i><span data-fa>دارک/لایت</span><span data-en>Dark/Light</span></span>
+    <span class="badge"><i class="fas fa-file-pdf"></i><span data-fa>نمایشگر PDF</span><span data-en>PDF Viewer</span></span>
+    <span class="badge"><i class="fas fa-rocket"></i><span data-fa>سئو شده</span><span data-en>SEO Ready</span></span>
+  </div>
+</header>
+
+<!-- ============ TEMPLATES ============ -->
+<section id="templates">
+  <div class="section-head reveal">
+    <span class="kicker">
+      <i class="fas fa-th-large"></i>
+      <span data-fa>قالب‌ها</span>
+      <span data-en>Templates</span>
+    </span>
+    <h2>
+      <span data-fa>یکی را <span class="grad">انتخاب کنید</span></span>
+      <span data-en>Pick <span class="grad">your style</span></span>
+    </h2>
+    <p class="sub" data-fa>هر قالب طراحی منحصربه‌فرد خودش را دارد، اما همه قابلیت‌ها در آن‌ها یکسان است</p>
+    <p class="sub" data-en>Each template has its own unique design, but all features are identical across them</p>
+  </div>
+
+  <!-- Toolbar -->
+  <div class="toolbar reveal">
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="جستجوی قالب..." oninput="filterCards()">
+      <span class="search-ic"><i class="fas fa-search"></i></span>
+    </div>
+    <div class="filters">
+      <button class="chip active" data-filter="all" onclick="setFilter('all', this)">
+        <i class="fas fa-grip"></i>
+        <span data-fa>همه</span><span data-en>All</span>
+      </button>
+      <button class="chip" data-filter="dark" onclick="setFilter('dark', this)">
+        <i class="fas fa-moon"></i>
+        <span data-fa>تیره</span><span data-en>Dark</span>
+      </button>
+      <button class="chip" data-filter="colorful" onclick="setFilter('colorful', this)">
+        <i class="fas fa-palette"></i>
+        <span data-fa>رنگی</span><span data-en>Colorful</span>
+      </button>
+      <button class="chip" data-filter="formal" onclick="setFilter('formal', this)">
+        <i class="fas fa-briefcase"></i>
+        <span data-fa>رسمی</span><span data-en>Formal</span>
+      </button>
+    </div>
+    <div class="count">
+      <i class="fas fa-layer-group"></i>
+      <strong id="resultCount">6</strong>
+      <span data-fa>قالب</span>
+      <span data-en>templates</span>
+    </div>
+  </div>
+
+  <div class="grid" id="templatesGrid">
+
+    <!-- Developer -->
+    <article class="card reveal" data-color="developer" data-tags="dark formal" data-name-fa="توسعه‌دهنده فول‌استک" data-name-en="Developer" style="animation-delay:.0s">
+      <div class="preview">
+        <span class="icon-badge"><i class="fas fa-code"></i></span>
+        <span class="label-badge"><span class="dot"></span><i class="fas fa-fire"></i><span data-fa>پرفروش</span><span data-en>Popular</span></span>
+        <div class="mock">
+          <div class="bar w-80"></div>
+          <div class="bar light w-50"></div>
+          <div class="bar light w-70"></div>
+          <div class="bar light w-90"></div>
+          <div class="row"><div class="box g"></div><div class="box"></div><div class="box"></div></div>
+        </div>
+      </div>
+      <div class="body">
+        <h3 data-fa>دموی توسعه‌دهنده</h3>
+        <h3 data-en>Developer Demo</h3>
+        <p class="desc" data-fa>طراحی ترمینالی، ماتریس مهارت با نوار پیشرفت، پروژه‌ها شبیه مخزن گیت‌هاب و تایم‌لاین شغلی.</p>
+        <p class="desc" data-en>Terminal design, skill matrix with progress bars, GitHub-style projects and career timeline.</p>
+        <div class="tags"><span>Dark</span><span>Mono</span><span>Skills</span></div>
+        <div class="actions">
+          <a href="demo-developer.html" class="btn-primary">
+            <i class="fas fa-eye"></i>
+            <span data-fa>مشاهده دمو</span><span data-en>View Demo</span>
+          </a>
+          <a href="#" class="btn-ghost">
+            <i class="fas fa-download"></i>
+            <span data-fa>دانلود</span><span data-en>Download</span>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Designer -->
+    <article class="card reveal" data-color="designer" data-tags="colorful" data-name-fa="طراح گرافیک" data-name-en="Designer" style="animation-delay:.05s">
+      <div class="preview">
+        <span class="icon-badge"><i class="fas fa-palette"></i></span>
+        <span class="label-badge"><span class="dot"></span><i class="fas fa-arrow-trend-up"></i><span data-fa>محبوب</span><span data-en>Trending</span></span>
+        <div class="mock">
+          <div class="bar w-60"></div>
+          <div class="bar light w-40"></div>
+          <div class="row"><div class="box g"></div><div class="box g"></div></div>
+          <div class="row"><div class="box"></div><div class="box"></div><div class="box"></div></div>
+        </div>
+      </div>
+      <div class="body">
+        <h3 data-fa>دموی طراح گرافیک</h3>
+        <h3 data-en>Designer Demo</h3>
+        <p class="desc" data-fa>گالری Masonry، اسلایدر نظرات، فیلتر پروژه و طراحی رنگارنگ با فونت سریف.</p>
+        <p class="desc" data-en>Masonry gallery, testimonials slider, project filter and colorful design with serif font.</p>
+        <div class="tags"><span>Creative</span><span>Gallery</span><span>Animated</span></div>
+        <div class="actions">
+          <a href="demo-designer.html" class="btn-primary">
+            <i class="fas fa-eye"></i>
+            <span data-fa>مشاهده دمو</span><span data-en>View Demo</span>
+          </a>
+          <a href="#" class="btn-ghost">
+            <i class="fas fa-download"></i>
+            <span data-fa>دانلود</span><span data-en>Download</span>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Freelancer -->
+    <article class="card reveal" data-color="freelancer" data-tags="colorful" data-name-fa="فریلنسر" data-name-en="Freelancer" style="animation-delay:.1s">
+      <div class="preview">
+        <span class="icon-badge"><i class="fas fa-briefcase"></i></span>
+        <span class="label-badge"><span class="dot"></span><i class="fas fa-sparkles"></i><span data-fa>جدید</span><span data-en>New</span></span>
+        <div class="mock">
+          <div class="bar w-60"></div>
+          <div class="bar light w-70"></div>
+          <div class="row"><div class="box"></div><div class="box g"></div><div class="box g"></div></div>
+        </div>
+      </div>
+      <div class="body">
+        <h3 data-fa>دموی فریلنسر</h3>
+        <h3 data-en>Freelancer Demo</h3>
+        <p class="desc" data-fa>بخش خدمات، پکیج‌های قیمت، ستاره‌های امتیاز در نظرات و دکمه Hire Me برجسته.</p>
+        <p class="desc" data-en>Services section, pricing packages, star ratings in testimonials and prominent Hire Me button.</p>
+        <div class="tags"><span>Services</span><span>Pricing</span><span>CTA</span></div>
+        <div class="actions">
+          <a href="demo-freelancer.html" class="btn-primary">
+            <i class="fas fa-eye"></i>
+            <span data-fa>مشاهده دمو</span><span data-en>View Demo</span>
+          </a>
+          <a href="#" class="btn-ghost">
+            <i class="fas fa-download"></i>
+            <span data-fa>دانلود</span><span data-en>Download</span>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Corporate -->
+    <article class="card reveal" data-color="corporate" data-tags="formal dark" data-name-fa="شرکتی" data-name-en="Corporate" style="animation-delay:.15s">
+      <div class="preview">
+        <span class="icon-badge"><i class="fas fa-building"></i></span>
+        <div class="mock">
+          <div class="bar w-80"></div>
+          <div class="bar light w-90"></div>
+          <div class="bar light w-70"></div>
+          <div class="bar light w-50"></div>
+          <div class="row"><div class="box g"></div><div class="box"></div></div>
+        </div>
+      </div>
+      <div class="body">
+        <h3 data-fa>دموی شرکتی</h3>
+        <h3 data-en>Corporate Demo</h3>
+        <p class="desc" data-fa>چیدمان ستون کناری، جدول دستاوردها با نتایج قابل اندازه‌گیری و کارت KPI در پروژه‌ها.</p>
+        <p class="desc" data-en>Sidebar layout, achievements table with measurable results and KPI cards in projects.</p>
+        <div class="tags"><span>Formal</span><span>Sidebar</span><span>KPI</span></div>
+        <div class="actions">
+          <a href="demo-corporate.html" class="btn-primary">
+            <i class="fas fa-eye"></i>
+            <span data-fa>مشاهده دمو</span><span data-en>View Demo</span>
+          </a>
+          <a href="#" class="btn-ghost">
+            <i class="fas fa-download"></i>
+            <span data-fa>دانلود</span><span data-en>Download</span>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Academic -->
+    <article class="card reveal" data-color="academic" data-tags="formal" data-name-fa="آکادمیک" data-name-en="Academic" style="animation-delay:.2s">
+      <div class="preview">
+        <span class="icon-badge"><i class="fas fa-graduation-cap"></i></span>
+        <div class="mock">
+          <div class="bar w-70"></div>
+          <div class="bar light w-90"></div>
+          <div class="bar light w-60"></div>
+          <div class="row"><div class="box"></div><div class="box g"></div></div>
+        </div>
+      </div>
+      <div class="body">
+        <h3 data-fa>دموی آکادمیک</h3>
+        <h3 data-en>Academic Demo</h3>
+        <p class="desc" data-fa>بخش Publications با شماره‌گذاری، Citations، جدول دوره‌های تدریس‌شده و Research Interests.</p>
+        <p class="desc" data-en>Publications section with numbering, Citations, courses table and Research Interests.</p>
+        <div class="tags"><span>Publications</span><span>Courses</span><span>Research</span></div>
+        <div class="actions">
+          <a href="demo-academic.html" class="btn-primary">
+            <i class="fas fa-eye"></i>
+            <span data-fa>مشاهده دمو</span><span data-en>View Demo</span>
+          </a>
+          <a href="#" class="btn-ghost">
+            <i class="fas fa-download"></i>
+            <span data-fa>دانلود</span><span data-en>Download</span>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Minimal -->
+    <article class="card reveal" data-color="minimal" data-tags="colorful dark" data-name-fa="مینیمال" data-name-en="Minimal" style="animation-delay:.25s">
+      <div class="preview">
+        <span class="icon-badge"><i class="fas fa-bolt"></i></span>
+        <span class="label-badge"><span class="dot"></span><i class="fas fa-heart"></i><span data-fa>پرطرفدار</span><span data-en>Favorite</span></span>
+        <div class="mock">
+          <div class="bar w-90"></div>
+          <div class="bar light w-60"></div>
+          <div class="row"><div class="box g"></div><div class="box g"></div><div class="box"></div><div class="box"></div></div>
+        </div>
+      </div>
+      <div class="body">
+        <h3 data-fa>دموی مینیمال</h3>
+        <h3 data-en>Minimal Demo</h3>
+        <p class="desc" data-fa>طراحی مدرن با گرادیان‌های زنده، افکت شیشه‌ای، Orbs شناور و انیمیشن‌های نرم.</p>
+        <p class="desc" data-en>Modern design with vivid gradients, glassmorphism, floating orbs and smooth animations.</p>
+        <div class="tags"><span>Modern</span><span>Gradient</span><span>Glass</span></div>
+        <div class="actions">
+          <a href="demo-minimal.html" class="btn-primary">
+            <i class="fas fa-eye"></i>
+            <span data-fa>مشاهده دمو</span><span data-en>View Demo</span>
+          </a>
+          <a href="#" class="btn-ghost">
+            <i class="fas fa-download"></i>
+            <span data-fa>دانلود</span><span data-en>Download</span>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Empty State -->
+    <div class="empty" id="emptyState">
+      <div class="ic"><i class="fas fa-magnifying-glass"></i></div>
+      <h3 data-fa>قالبی پیدا نشد</h3>
+      <h3 data-en>No template found</h3>
+      <p data-fa>جستجو یا فیلتر دیگری را امتحان کنید</p>
+      <p data-en>Try another search or filter</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section id="features">
+  <div class="section-head reveal">
+    <span class="kicker">
+      <i class="fas fa-star"></i>
+      <span data-fa>امکانات</span>
+      <span data-en>Features</span>
+    </span>
+    <h2>
+      <span data-fa>همه چیز <span class="grad">آماده است</span></span>
+      <span data-en>Everything <span class="grad">included</span></span>
+    </h2>
+    <p class="sub" data-fa>تمام قالب‌ها این قابلیت‌ها را به صورت یکسان دارند</p>
+    <p class="sub" data-en>All templates come with these features built-in</p>
+  </div>
+  <div class="features-grid">
+
+    <div class="feature reveal">
+      <div class="ic"><i class="fas fa-circle-half-stroke"></i></div>
+      <h4 data-fa>حالت تاریک/روشن</h4>
+      <h4 data-en>Dark / Light Mode</h4>
+      <p data-fa>تغییر تم با یک کلیک، ذخیره در حافظه مرورگر</p>
+      <p data-en>Toggle theme with one click, saved in browser</p>
+    </div>
+
+    <div class="feature reveal">
+      <div class="ic"><i class="fas fa-globe"></i></div>
+      <h4 data-fa>دو زبانه (FA/EN)</h4>
+      <h4 data-en>Bilingual (FA/EN)</h4>
+      <p data-fa>پشتیبانی کامل RTL و LTR، تغییر آنی بدون رفرش</p>
+      <p data-en>Full RTL & LTR support, instant switch without refresh</p>
+    </div>
+
+    <div class="feature reveal">
+      <div class="ic"><i class="fas fa-file-pdf"></i></div>
+      <h4 data-fa>نمایشگر PDF</h4>
+      <h4 data-en>PDF Viewer</h4>
+      <p data-fa>نمایش رزومه PDF داخل سایت، مخصوص هر زبان</p>
+      <p data-en>Display PDF resume inside site, per language</p>
+    </div>
+
+    <div class="feature reveal">
+      <div class="ic"><i class="fas fa-hand-pointer"></i></div>
+      <h4 data-fa>مودال جزئیات پروژه</h4>
+      <h4 data-en>Project Detail Modal</h4>
+      <p data-fa>کلیک روی هر پروژه = نمایش کامل با تصویر، توضیحات و لینک</p>
+      <p data-en>Click any project = full view with image, description and links</p>
+    </div>
+
+    <div class="feature reveal">
+      <div class="ic"><i class="fas fa-wand-magic-sparkles"></i></div>
+      <h4 data-fa>انیمیشن‌های نرم</h4>
+      <h4 data-en>Smooth Animations</h4>
+      <p data-fa>Reveal، شمارنده، اسکرول نرم و نوار پیشرفت اسکرول</p>
+      <p data-en>Reveal, counters, smooth scroll and progress bar</p>
+    </div>
+
+    <div class="feature reveal">
+      <div class="ic"><i class="fas fa-magnifying-glass-chart"></i></div>
+      <h4 data-fa>سئوی کامل</h4>
+      <h4 data-en>Full SEO</h4>
+      <p data-fa>Schema.org Person، Open Graph، Twitter Card و متا تگ‌ها</p>
+      <p data-en>Schema.org Person, Open Graph, Twitter Card and meta tags</p>
+    </div>
+
+    <div class="feature reveal">
+      <div class="ic"><i class="fas fa-comments"></i></div>
+      <h4 data-fa>اسلایدر نظرات</h4>
+      <h4 data-en>Testimonials Slider</h4>
+      <p data-fa>خودکار + ناوبری نقطه‌ای، مخصوص هر دمو</p>
+      <p data-en>Auto + dot navigation, unique per demo</p>
+    </div>
+
+    <div class="feature reveal">
+      <div class="ic"><i class="fas fa-envelope-circle-check"></i></div>
+      <h4 data-fa>فرم تماس اعتبارسنجی</h4>
+      <h4 data-en>Contact Form Validation</h4>
+      <p data-fa>چک نام، ایمیل و پیام با نمایش خطاها</p>
+      <p data-en>Validate name, email and message with error display</p>
+    </div>
+
+    <div class="feature reveal">
+      <div class="ic"><i class="fas fa-clipboard-check"></i></div>
+      <h4 data-fa>کپی با یک کلیک</h4>
+      <h4 data-en>One-click Copy</h4>
+      <p data-fa>کپی ایمیل و تلفن با نمایش «کپی شد»</p>
+      <p data-en>Copy email and phone with "Copied" feedback</p>
+    </div>
+
+    <div class="feature reveal">
+      <div class="ic"><i class="fas fa-mobile-screen-button"></i></div>
+      <h4 data-fa>کاملاً واکنش‌گرا</h4>
+      <h4 data-en>Fully Responsive</h4>
+      <p data-fa>نمایش عالی در موبایل، تبلت و دسکتاپ</p>
+      <p data-en>Perfect display on mobile, tablet and desktop</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ COMPARE ============ -->
+<section id="compare">
+  <div class="section-head reveal">
+    <span class="kicker">
+      <i class="fas fa-scale-balanced"></i>
+      <span data-fa>مقایسه</span>
+      <span data-en>Compare</span>
+    </span>
+    <h2>
+      <span data-fa>مقایسه <span class="grad">ویژگی‌ها</span></span>
+      <span data-en>Feature <span class="grad">Comparison</span></span>
+    </h2>
+    <p class="sub" data-fa>همه قالب‌ها تمام قابلیت‌های پایه را دارند — فقط طراحی متفاوت است</p>
+    <p class="sub" data-en>All templates share the same core features — only design differs</p>
+  </div>
+  <div class="compare-wrap reveal">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th><span data-fa>ویژگی</span><span data-en>Feature</span></th>
+          <th><i class="fas fa-code"></i>Developer</th>
+          <th><i class="fas fa-palette"></i>Designer</th>
+          <th><i class="fas fa-briefcase"></i>Freelancer</th>
+          <th><i class="fas fa-building"></i>Corporate</th>
+          <th><i class="fas fa-graduation-cap"></i>Academic</th>
+          <th><i class="fas fa-bolt"></i>Minimal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><i class="fas fa-circle-half-stroke"></i><span data-fa>حالت تاریک/روشن</span><span data-en>Dark/Light Mode</span></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-globe"></i><span data-fa>دو زبانه FA/EN</span><span data-en>Bilingual</span></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-file-pdf"></i><span data-fa>نمایشگر PDF</span><span data-en>PDF Viewer</span></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-hand-pointer"></i><span data-fa>مودال جزئیات پروژه</span><span data-en>Project Modal</span></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-filter"></i><span data-fa>فیلتر پروژه</span><span data-en>Project Filter</span></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-comments"></i><span data-fa>اسلایدر نظرات</span><span data-en>Testimonials Slider</span></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-timeline"></i><span data-fa>تایم‌لاین شغلی</span><span data-en>Career Timeline</span></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-chart-line"></i><span data-fa>شمارنده اعداد</span><span data-en>Counter Animation</span></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-envelope"></i><span data-fa>فرم تماس + اعتبارسنجی</span><span data-en>Contact Form</span></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-magnifying-glass-chart"></i><span data-fa>سئوی کامل</span><span data-en>Full SEO</span></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-chart-simple"></i><span data-fa>ماتریس مهارت</span><span data-en>Skills Matrix</span></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="no"><i class="fas fa-minus"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="no"><i class="fas fa-minus"></i></td>
+          <td class="no"><i class="fas fa-minus"></i></td>
+          <td class="no"><i class="fas fa-minus"></i></td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-hand-holding-dollar"></i><span data-fa>بخش خدمات + قیمت</span><span data-en>Services + Pricing</span></td>
+          <td class="no"><i class="fas fa-minus"></i></td>
+          <td class="no"><i class="fas fa-minus"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="no"><i class="fas fa-minus"></i></td>
+          <td class="no"><i class="fas fa-minus"></i></td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-table"></i><span data-fa>جدول دستاوردها</span><span data-en>Achievements Table</span></td>
+          <td class="no"><i class="fas fa-minus"></i></td>
+          <td class="no"><i class="fas fa-minus"></i></td>
+          <td class="no"><i class="fas fa-minus"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="no"><i class="fas fa-minus"></i></td>
+          <td class="no"><i class="fas fa-minus"></i></td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-book"></i><span data-fa>بخش Publications</span><span data-en>Publications Section</span></td>
+          <td class="no"><i class="fas fa-minus"></i></td>
+          <td class="no"><i class="fas fa-minus"></i></td>
+          <td class="no"><i class="fas fa-minus"></i></td>
+          <td class="no"><i class="fas fa-minus"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="no"><i class="fas fa-minus"></i></td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-images"></i><span data-fa>گالری Masonry</span><span data-en>Masonry Gallery</span></td>
+          <td class="no"><i class="fas fa-minus"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+          <td class="no"><i class="fas fa-minus"></i></td>
+          <td class="no"><i class="fas fa-minus"></i></td>
+          <td class="no"><i class="fas fa-minus"></i></td>
+          <td class="no"><i class="fas fa-minus"></i></td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-wand-magic-sparkles"></i><span data-fa>گرادیان و افکت شیشه</span><span data-en>Gradient & Glass</span></td>
+          <td class="no"><i class="fas fa-minus"></i></td>
+          <td class="no"><i class="fas fa-minus"></i></td>
+          <td class="no"><i class="fas fa-minus"></i></td>
+          <td class="no"><i class="fas fa-minus"></i></td>
+          <td class="no"><i class="fas fa-minus"></i></td>
+          <td class="yes"><i class="fas fa-check-circle"></i></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ HOW TO USE ============ -->
+<section id="how">
+  <div class="section-head reveal">
+    <span class="kicker">
+      <i class="fas fa-circle-play"></i>
+      <span data-fa>راهنما</span>
+      <span data-en>How to Use</span>
+    </span>
+    <h2>
+      <span data-fa>در <span class="grad">۳ قدم ساده</span></span>
+      <span data-en>In <span class="grad">3 simple steps</span></span>
+    </h2>
+  </div>
+  <div class="steps">
+
+    <div class="step reveal">
+      <div class="step-icon"><i class="fas fa-download"></i></div>
+      <h4 data-fa>۱. قالب را دانلود کنید</h4>
+      <h4 data-en>1. Download a template</h4>
+      <p data-fa>روی دکمه دانلود هر قالب بزنید و فایل HTML را ذخیره کنید. هر قالب در یک فایل مستقل است.</p>
+      <p data-en>Click download on any template and save the HTML file. Each template is a single self-contained file.</p>
+    </div>
+
+    <div class="step reveal">
+      <div class="step-icon"><i class="fas fa-pen-to-square"></i></div>
+      <h4 data-fa>۲. محتوا را ویرایش کنید</h4>
+      <h4 data-en>2. Edit the content</h4>
+      <p data-fa>فایل را در VS Code یا هر ادیتوری باز کنید و اطلاعات شخصی خودتان را جایگزین کنید. تمام CSS و JS داخل همان فایل است.</p>
+      <p data-en>Open in VS Code or any editor and replace the placeholder content. All CSS and JS are inside the same file.</p>
+    </div>
+
+    <div class="step reveal">
+      <div class="step-icon"><i class="fas fa-cloud-arrow-up"></i></div>
+      <h4 data-fa>۳. آپلود کنید</h4>
+      <h4 data-en>3. Upload</h4>
+      <p data-fa>فایل PDF رزومه را در پوشه assets بگذارید و فایل HTML را روی هر هاستی آپلود کنید. تمام!</p>
+      <p data-en>Put the PDF resume in assets folder and upload the HTML file to any host. Done!</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="section-head reveal">
+    <span class="kicker">
+      <i class="fas fa-circle-question"></i>
+      <span data-fa>سوالات</span>
+      <span data-en>FAQ</span>
+    </span>
+    <h2>
+      <span data-fa>سوالات <span class="grad">متداول</span></span>
+      <span data-en>Frequently asked <span class="grad">questions</span></span>
+    </h2>
+  </div>
+  <div class="faq">
+
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>
+          <i class="fas fa-circle-question faq-icon"></i>
+          <span data-fa>آیا استفاده از این قالب‌ها رایگان است؟</span>
+          <span data-en>Are these templates free to use?</span>
+        </span>
+        <span class="ic"><i class="fas fa-plus"></i></span>
+      </div>
+      <div class="faq-a">
+        <span data-fa>بله، تمام ۶ قالب کاملاً رایگان هستند و می‌توانید برای رزومه شخصی خودتان استفاده کنید. فقط کدها را ویرایش کنید و اطلاعات خودتان را جایگزین کنید.</span>
+        <span data-en>Yes, all 6 templates are completely free to use for your personal resume. Just edit the code and replace the placeholder content.</span>
+      </div>
+    </div>
+
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>
+          <i class="fas fa-code faq-icon"></i>
+          <span data-fa>آیا به دانش برنامه‌نویسی نیاز دارم؟</span>
+          <span data-en>Do I need coding knowledge?</span>
+        </span>
+        <span class="ic"><i class="fas fa-plus"></i></span>
+      </div>
+      <div class="faq-a">
+        <span data-fa>برای استفاده پایه، فقط باید متن‌ها را در فایل HTML جایگزین کنید که کار ساده‌ای است. برای تغییرات ساختاری یا اضافه کردن بخش جدید، آشنایی با HTML/CSS مفید است.</span>
+        <span data-en>For basic use, you just need to replace text in the HTML file which is simple. For structural changes or adding new sections, HTML/CSS familiarity helps.</span>
+      </div>
+    </div>
+
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>
+          <i class="fas fa-language faq-icon"></i>
+          <span data-fa>چطور زبان را تغییر دهم؟</span>
+          <span data-en>How do I switch language?</span>
+        </span>
+        <span class="ic"><i class="fas fa-plus"></i></span>
+      </div>
+      <div class="faq-a">
+        <span data-fa>روی دکمه «EN» یا «فا» در گوشه بالای صفحه کلیک کنید. زبان انتخابی در مرورگر شما ذخیره می‌شود و دفعه بعد هم اعمال می‌شود.</span>
+        <span data-en>Click the "EN" or "فا" button in the top corner. Your language choice is saved in the browser and persists next time.</span>
+      </div>
+    </div>
+
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>
+          <i class="fas fa-file-pdf faq-icon"></i>
+          <span data-fa>چطور رزومه PDF را جایگزین کنم؟</span>
+          <span data-en>How do I replace the PDF resume?</span>
+        </span>
+        <span class="ic"><i class="fas fa-plus"></i></span>
+      </div>
+      <div class="faq-a">
+        <span data-fa>یک پوشه با نام «assets» بسازید و فایل‌های PDF خود را با نام‌های «resume-fa.pdf» و «resume-en.pdf» در آن قرار دهید. دکمه PDF به صورت خودکار فایل را بر اساس زبان فعلی بارگذاری می‌کند.</span>
+        <span data-en>Create an "assets" folder and place your PDF files named "resume-fa.pdf" and "resume-en.pdf" inside. The PDF button automatically loads the correct file based on current language.</span>
+      </div>
+    </div>
+
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>
+          <i class="fas fa-sack-dollar faq-icon"></i>
+          <span data-fa>آیا می‌توانم قالب‌ها را برای مشتری بفروشم؟</span>
+          <span data-en>Can I resell the templates to clients?</span>
+        </span>
+        <span class="ic"><i class="fas fa-plus"></i></span>
+      </div>
+      <div class="faq-a">
+        <span data-fa>بله، می‌توانید برای مشتری شخصی‌سازی کنید و تحویل دهید. اما فروش مجدد یا توزیع خود قالب به عنوان یک محصول جداگانه مجاز نیست.</span>
+        <span data-en>Yes, you can customize and deliver to a client. But reselling or distributing the template itself as a standalone product is not allowed.</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ CTA BANNER ============ -->
+<section>
+  <div class="cta-banner reveal">
+    <h2>
+      <i class="fas fa-rocket"></i>
+      <span data-fa>آماده شروع هستید؟</span>
+      <span data-en>Ready to start?</span>
+    </h2>
+    <p data-fa>یکی از ۶ قالب حرفه‌ای را انتخاب کنید و در کمتر از ۵ دقیقه رزومه آنلاین خود را داشته باشید.</p>
+    <p data-en>Pick one of the 6 professional templates and have your online resume in under 5 minutes.</p>
+    <a href="#templates" class="btn">
+      <i class="fas fa-th-large"></i>
+      <span data-fa>مشاهده قالب‌ها</span>
+      <span data-en>Browse Templates</span>
+    </a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4><i class="fas fa-circle-info"></i><span data-fa>درباره پروژه</span><span data-en>About</span></h4>
+      <p data-fa>مجموعه‌ای از ۶ قالب HTML رزومه دو زبانه با طراحی متفاوت، ساخته شده با عشق برای حرفه‌ای‌ها.</p>
+      <p data-en>A collection of 6 bilingual HTML resume templates with unique designs, built with love for professionals.</p>
+    </div>
+    <div class="footer-col">
+      <h4><i class="fas fa-layer-group"></i><span data-fa>قالب‌ها</span><span data-en>Templates</span></h4>
+      <ul>
+        <li><a href="demo-developer.html"><i class="fas fa-code"></i> Developer</a></li>
+        <li><a href="demo-designer.html"><i class="fas fa-palette"></i> Designer</a></li>
+        <li><a href="demo-freelancer.html"><i class="fas fa-briefcase"></i> Freelancer</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4><i class="fas fa-ellipsis"></i><span data-fa>بیشتر</span><span data-en>More</span></h4>
+      <ul>
+        <li><a href="demo-corporate.html"><i class="fas fa-building"></i> Corporate</a></li>
+        <li><a href="demo-academic.html"><i class="fas fa-graduation-cap"></i> Academic</a></li>
+        <li><a href="demo-minimal.html"><i class="fas fa-bolt"></i> Minimal</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4><i class="fas fa-link"></i><span data-fa>لینک‌ها</span><span data-en>Links</span></h4>
+      <ul>
+        <li><a href="#features"><i class="fas fa-star"></i> <span data-fa>ویژگی‌ها</span><span data-en>Features</span></a></li>
+        <li><a href="#compare"><i class="fas fa-scale-balanced"></i> <span data-fa>مقایسه</span><span data-en>Compare</span></a></li>
+        <li><a href="#faq"><i class="fas fa-circle-question"></i> <span data-fa>سوالات متداول</span><span data-en>FAQ</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>
+      <i class="fas fa-heart" style="color:#ec4899"></i>
+      <span data-fa>© ۱۴۰۴ — ساخته شده با عشق برای حرفه‌ای‌ها</span>
+      <span data-en>© 2025 — Built with love for professionals</span>
+    </div>
+    <div class="footer-social">
+      <a href="https://github.com/" target="_blank" rel="noopener" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://twitter.com/" target="_blank" rel="noopener" title="Twitter">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://linkedin.com/" target="_blank" rel="noopener" title="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<button id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script>
+/* ============ LANGUAGE ============ */
+let lang = localStorage.getItem('lang') || 'fa';
+function applyLang(){
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
+  document.querySelectorAll('[data-fa]').forEach(el=>{
+    el.style.display = lang === 'fa' ? '' : 'none';
+  });
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    el.style.display = lang === 'en' ? '' : 'none';
+  });
+  document.getElementById('searchInput').placeholder =
+    lang === 'fa' ? 'جستجوی قالب...' : 'Search templates...';
+}
+function toggleLang(){
+  lang = lang === 'fa' ? 'en' : 'fa';
+  localStorage.setItem('lang', lang);
+  applyLang();
+  filterCards();
+}
+applyLang();
+
+/* ============ THEME (with icons) ============ */
+let theme = localStorage.getItem('theme') || 'dark';
+function applyTheme(){
+  document.documentElement.setAttribute('data-theme', theme);
+  const btn = document.getElementById('themeBtn');
+  btn.innerHTML = theme === 'dark'
+    ? '<i class="fas fa-sun"></i>'
+    : '<i class="fas fa-moon"></i>';
+}
+function toggleTheme(){
+  theme = theme === 'dark' ? 'light' : 'dark';
+  localStorage.setItem('theme', theme);
+  applyTheme();
+}
+applyTheme();
+
+/* ============ MOBILE MENU ============ */
+function toggleMenu(){
+  const menu = document.getElementById('mobileMenu');
+  const btn = document.getElementById('hamburger');
+  menu.classList.toggle('open');
+  const isOpen = menu.classList.contains('open');
+  btn.innerHTML = isOpen
+    ? '<i class="fas fa-xmark"></i>'
+    : '<i class="fas fa-bars"></i>';
+}
+function closeMenu(){
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.getElementById('hamburger').innerHTML = '<i class="fas fa-bars"></i>';
+}
+
+/* ============ SCROLL ============ */
+window.addEventListener('scroll', ()=>{
+  const h = document.documentElement;
+  const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+  document.getElementById('scrollProgress').style.width = pct + '%';
+  document.getElementById('backTop').classList.toggle('show', h.scrollTop > 400);
+  document.getElementById('navbar').classList.toggle('scrolled', h.scrollTop > 20);
+  updateActiveNav();
+});
+function updateActiveNav(){
+  const sections = document.querySelectorAll('section[id], header[id]');
+  const scrollPos = window.scrollY + 120;
+  let active = 'home';
+  sections.forEach(sec=>{ if(sec.offsetTop <= scrollPos) active = sec.id; });
+  document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(a=>{
+    const href = a.getAttribute('href');
+    if(href === '#' + active) a.classList.add('active');
+    else a.classList.remove('active');
+  });
+}
+
+/* ============ REVEAL ============ */
+const revealObs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){ e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+  });
+},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>revealObs.observe(el));
+
+/* ============ FILTER + SEARCH ============ */
+let currentFilter = 'all';
+function setFilter(filter, btn){
+  currentFilter = filter;
+  document.querySelectorAll('.chip').forEach(c=>{
+    if(c.dataset.filter === filter) c.classList.add('active');
+    else c.classList.remove('active');
+  });
+  filterCards();
+}
+function filterCards(){
+  const q = document.getElementById('searchInput').value.trim().toLowerCase();
+  let visible = 0;
+  document.querySelectorAll('#templatesGrid .card').forEach(card=>{
+    const name = (lang === 'fa' ? card.dataset.nameFa : card.dataset.nameEn) || '';
+    const matchSearch = !q || name.toLowerCase().includes(q);
+    const tags = (card.dataset.tags || '').split(' ');
+    const matchFilter = currentFilter === 'all' || tags.includes(currentFilter);
+    if(matchSearch && matchFilter){
+      card.classList.remove('hide');
+      visible++;
+    } else {
+      card.classList.add('hide');
+    }
+  });
+  document.getElementById('resultCount').textContent = visible;
+  const empty = document.getElementById('emptyState');
+  empty.classList.toggle('show', visible === 0);
+}
+
+/* ============ FAQ ============ */
+function toggleFaq(el){
+  const item = el.parentElement;
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!wasOpen) item.classList.add('open');
+}
+
+/* ============ SMOOTH SCROLL ============ */
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click', e=>{
+    const href = a.getAttribute('href');
+    if(href === '#') return;
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if(target){
+      const top = target.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({top, behavior:'smooth'});
+      closeMenu();
+    }
+  });
+});
+
+/* ============ INIT ============ */
+updateActiveNav();
+filterCards();
+</script>
+</body>
+</html>
